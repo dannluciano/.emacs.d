@@ -47,8 +47,8 @@
 (blink-cursor-mode t)
 (show-paren-mode t)
 (column-number-mode t)
-;;(set-fringe-style -1)
-;;(tooltip-mode -1)
+(set-fringe-style -1)
+(tooltip-mode -1)
 
 ;; (setq TeX-PDF-mode t)
 
