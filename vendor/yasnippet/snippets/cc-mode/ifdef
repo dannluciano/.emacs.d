@@ -1,0 +1,5 @@
+#name : ifdef XX; endif /* XX */
+# --
+#ifdef ${1:foo}
+$>$0
+#endif /* $1 */

@@ -1,0 +1,4 @@
+#name: filename
+# --
+`(file-name-nondirectory (buffer-file-name))`
+

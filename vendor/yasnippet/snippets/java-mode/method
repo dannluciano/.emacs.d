@@ -1,0 +1,7 @@
+# method definition
+# public void Name ()
+# --
+${1:acess_mode} ${2:return_type} ${3:name} ( ${4:parameters} )
+{
+$>$0
+}

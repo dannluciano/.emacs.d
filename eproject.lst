@@ -1,0 +1,15 @@
+;; -*- mode: Lisp; -*-
+
+(setq prj-version "0.4")
+
+(setq prj-list
+      '(("eproject" "/Users/dannluciano/.emacs.d/elpa/eproject-0.4")))
+
+(setq prj-last-open "eproject")
+
+(setq prj-frame-pos
+      '((top . 22)
+        (left . 0)
+        (width . 157)
+        (height . 43)))
+

@@ -1,0 +1,3 @@
+#name: stylesheet_link_tag
+# --
+<%= stylesheet_link_tag '${1:name}', :cache => true %>

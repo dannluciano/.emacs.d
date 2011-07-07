@@ -1,0 +1,7 @@
+# try {} catch
+# --
+try {
+    $1
+} catch (${2:Exception e}) {
+    e.printStackTrace();$0
+}
