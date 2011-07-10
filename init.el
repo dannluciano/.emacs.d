@@ -63,6 +63,7 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  '(default-frame-alist (quote ((vertical-scroll-bars . right) (tool-bar-lines . 0) (width . 158) (height . 46) (menu-bar-lines . 1) (background-color . "#000000") (background-mode . dark) (border-color . "#000000") (cursor-color . "#FFA560") (foreground-color . "#F6F3E8") (mouse-color . "sienna1"))))
+ '(pop-up-frame-alist (quote ((vertical-scroll-bars . right) (tool-bar-lines . 0) (width . 158) (height . 46) (menu-bar-lines . 1) (background-color . "#000000") (background-mode . dark) (border-color . "#000000") (cursor-color . "#FFA560") (foreground-color . "#F6F3E8") (mouse-color . "sienna1"))))
  '(doc-view-continuous t)
  '(ecb-auto-activate nil)
  '(ecb-compilation-buffer-names (quote (("*Calculator*") ("*vc*") ("*vc-diff*") ("*Apropos*") ("*Occur*") ("*shell*" . t) ("\\*[cC]ompilation.*\\*" . t) ("\\*i?grep.*\\*" . t) ("*JDEE Compile Server*") ("*Help*") ("*Completions*") ("*Backtrace*") ("*Compile-log*") ("*bsh*") ("*Messages*"))))

@@ -1,4 +1,6 @@
-(set-frame-font "Menlo-14")
+(message "Darwin")
+(set-default-font "Menlo-14")
+
 
 ;; Textmate
 
