@@ -17,6 +17,7 @@
 								"/usr/local/bin"
 								"/usr/texbin/"))
 
+(setq ns-pop-up-frames nil)
 (setq visible-bell 1)
 (setq ring-bell-function 'ignore)
 
@@ -31,14 +32,15 @@
 
 ;; (setq make-backup-files nil)
 (setq
-  backup-by-copying t ;; don't clobber symlinks
-  backup-directory-alist ;; don't litter
-    '(("." .  "~/.emacs.d/autosaves/"))
-  delete-old-versions t
-  kept-new-versions 6
-  kept-old-versions 2
-  version-control t) ;; use versioned backups
+ backup-by-copying t ;; don't clobber symlinks
+ backup-directory-alist ;; don't litter
+ '(("." .  "~/.emacs.d/autosaves/"))
+ delete-old-versions t
+ kept-new-versions 6
+ kept-old-versions 2
+ version-control t) ;; use versioned backups
 
+(setq ns-pop-up-frames nil)
 (setq auto-save-default nil)
 (setq-default tab-width 2)
 ;; (setq-default indent-tabs-mode nil)
@@ -62,8 +64,8 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(default-frame-alist (quote ((vertical-scroll-bars . right) (tool-bar-lines . 0) (width . 158) (height . 46) (menu-bar-lines . 1) (background-color . "#000000") (background-mode . dark) (border-color . "#000000") (cursor-color . "#FFA560") (foreground-color . "#F6F3E8") (mouse-color . "sienna1"))))
- '(pop-up-frame-alist (quote ((vertical-scroll-bars . right) (tool-bar-lines . 0) (width . 158) (height . 46) (menu-bar-lines . 1) (background-color . "#000000") (background-mode . dark) (border-color . "#000000") (cursor-color . "#FFA560") (foreground-color . "#F6F3E8") (mouse-color . "sienna1"))))
+ '(default-frame-alist (quote ((tool-bar-lines . 0) (width . 158) (height . 46) (menu-bar-lines . 1) (border-color . "#000000") (mouse-color . "sienna1") (vertical-scroll-bars) (foreground-color . "#839496") (background-color . "#002b36") (background-mode . dark) (cursor-color . "#839496") (frame-font . "Menlo-14"))))
+ '(pop-up-frame-alist (quote ((tool-bar-lines . 0) (width . 158) (height . 46) (menu-bar-lines . 1) (border-color . "#000000") (mouse-color . "sienna1") (vertical-scroll-bars) (foreground-color . "#839496") (background-color . "#002b36") (background-mode . dark) (cursor-color . "#839496") (frame-font . "Menlo-14"))))
  '(doc-view-continuous t)
  '(ecb-auto-activate nil)
  '(ecb-compilation-buffer-names (quote (("*Calculator*") ("*vc*") ("*vc-diff*") ("*Apropos*") ("*Occur*") ("*shell*" . t) ("\\*[cC]ompilation.*\\*" . t) ("\\*i?grep.*\\*" . t) ("*JDEE Compile Server*") ("*Help*") ("*Completions*") ("*Backtrace*") ("*Compile-log*") ("*bsh*") ("*Messages*"))))
@@ -87,9 +89,10 @@
  '(iswitchb-mode t nil (iswitchb))
  '(mouse-avoidance-mode (quote animate) nil (avoid))
  '(mouse-wheel-mode t nil (mwheel))
+ '(pop-up-frame-alist (quote ((vertical-scroll-bars . right) (tool-bar-lines . 0) (width . 80) (height . 46) (menu-bar-lines . 1) (background-color . "#000000") (background-mode . dark) (border-color . "#000000") (cursor-color . "#FFA560") (foreground-color . "#F6F3E8") (mouse-color . "sienna1"))))
  '(save-place t nil (saveplace))
  '(scroll-bar-mode nil)
- '(server-mode t)
+ ;; '(server-mode t)
  '(speedbar-frame-parameters (quote ((minibuffer . t) (width . 20) (border-width . 0) (menu-bar-lines . 0) (tool-bar-lines . 0) (unsplittable . t) (left-fringe . 0))))
  '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify)))
  '(version-control t))
@@ -101,8 +104,6 @@
   ;; If there is more than one, they won't work right.
  )
 
-(set-frame-position (selected-frame) 0 20);
-
 ;; LoadPath
 
 (add-to-list 'load-path dotfiles-dir)
@@ -113,6 +114,7 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/ecb-2.40"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/auctex"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/auctex/preview"))
+
 
 ;; Autopair
 
@@ -136,7 +138,7 @@
 
 (require 'color-theme)
 (color-theme-initialize)
-;;(setq color-theme-is-global t)
+(setq color-theme-is-global t)
 ;;(require 'color-theme-ir-black)
 ;;(color-theme-ir-black)
 (require 'color-theme-solarized)
@@ -355,6 +357,7 @@
 )
 (add-hook 'lisp-mode 'my-lisp-hook)
 
+
 ;; ERC
 
 (setq erc-server "irc.freenode.net" 
@@ -377,7 +380,6 @@
 (add-hook 'coding-hook 'add-watchwords)
 
 
-
 (auto-compression-mode t)
 (add-hook 'text-mode-hook 'turn-on-flyspell)
 
@@ -390,20 +392,11 @@
 (if (file-exists-p user-specific-config) (load user-specific-config))
 (if (file-exists-p system-type-specific-config) (load system-type-specific-config))
 
-
-(defun toggle-fullscreen ()
-  (interactive)
-  (set-frame-parameter nil 'fullscreen (if (frame-parameter nil 'fullscreen)
-                                           nil
-                                         'fullboth)))
-(global-set-key (kbd "M-n") 'toggle-fullscreen)
-
 (defun kill-current-line ()
   "Kill the current line, no matter where the cursor is."
   (interactive)
   (textmate-select-line) (kill-region (region-beginning) (region-end)))
 (global-set-key [(control shift k)] 'kill-current-line)
-
 
 
 ;; Benchmarking

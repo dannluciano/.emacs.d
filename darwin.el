@@ -1,7 +1,7 @@
 (message "Darwin")
-(set-default-font "Menlo-14")
 
-
+(set-frame-font "Menlo-14")
+(set-frame-position (selected-frame) 0 20);
 ;; Textmate
 
 (require 'textmate)
@@ -25,3 +25,6 @@
 (global-set-key (kbd "s-;") 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "<s-right>") 'next-buffer)
 (global-set-key (kbd "<s-left>") 'previous-buffer)
+(global-set-key (kbd "<s-return>") 'ns-toggle-fullscreen)
+
+(run-with-idle-timer 0.1 nil 'ns-toggle-fullscreen)
