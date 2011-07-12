@@ -319,34 +319,34 @@
 
 ;; CEDET
 
-;;(load-file (concat dotfiles-dir "/cedet-1.0/common/cedet.el"))
-;;(global-ede-mode t)                      ; Enable the Project management system
-;;(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion 
-;;(global-srecode-minor-mode 1)            ; Enable template insertion menu
+(load-file (concat dotfiles-dir "/cedet-1.0/common/cedet.el"))
+(global-ede-mode t)                      ; Enable the Project management system
+(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion 
+(global-srecode-minor-mode 1)            ; Enable template insertion menu
 
-;;(require 'semantic-ia)
-;;(require 'semantic-gcc)
+(require 'semantic-ia)
+(require 'semantic-gcc)
 
-;; (defun my-cedet-hook ()
-;;  (local-set-key [(meta return)] 'semantic-ia-complete-symbol-menu)
-;;  (local-set-key "\C-c?" 'semantic-ia-complete-symbol-menu)
-    ;; (local-set-key "\C-c>" 'semantic-complete-analyze-inline)
-    ;; (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle)
-    ;; (local-set-key "." 'semantic-complete-self-insert)
-    ;; (local-set-key ">" 'semantic-complete-self-insert)
-;;  (local-set-key "\C-ch" 'eassist-switch-h-cpp)
-;;  (local-set-key "\C-cl" 'eassist-list-methods)
-;;  (local-set-key "\C-c\C-r" 'semantic-symref)
-;;  )
-;;(add-hook 'c-mode-common-hook 'my-cedet-hook)
+(defun my-cedet-hook ()
+ (local-set-key [(meta return)] 'semantic-ia-complete-symbol-menu)
+ (local-set-key "\C-c?" 'semantic-ia-complete-symbol-menu)
+    (local-set-key "\C-c>" 'semantic-complete-analyze-inline)
+    (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle)
+    (local-set-key "." 'semantic-complete-self-insert)
+    (local-set-key ">" 'semantic-complete-self-insert)
+ (local-set-key "\C-ch" 'eassist-switch-h-cpp)
+ (local-set-key "\C-cl" 'eassist-list-methods)
+ (local-set-key "\C-c\C-r" 'semantic-symref)
+ )
+(add-hook 'c-mode-common-hook 'my-cedet-hook)
 
 (require 'sr-speedbar)
 (global-set-key [(meta s)] 'sr-speedbar-toggle)
 
 ;; ECB
 
-;; (load-file (concat dotfiles-dir "/vendor/ecb-2.40/ecb.el"))
-;; (require 'ecb)
+(load-file (concat dotfiles-dir "/vendor/ecb-2.40/ecb.el"))
+(require 'ecb)
 ;; (ecb-activate)
 
 
