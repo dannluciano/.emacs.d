@@ -49,7 +49,7 @@
 (blink-cursor-mode t)
 (show-paren-mode t)
 (column-number-mode t)
-(set-fringe-style -1)
+;; (set-fringe-style -1)
 (tooltip-mode -1)
 
 ;; (setq TeX-PDF-mode t)
@@ -92,7 +92,7 @@
  '(pop-up-frame-alist (quote ((vertical-scroll-bars . right) (tool-bar-lines . 0) (width . 80) (height . 46) (menu-bar-lines . 1) (background-color . "#000000") (background-mode . dark) (border-color . "#000000") (cursor-color . "#FFA560") (foreground-color . "#F6F3E8") (mouse-color . "sienna1"))))
  '(save-place t nil (saveplace))
  '(scroll-bar-mode nil)
- ;; '(server-mode t)
+ '(server-mode t)
  '(speedbar-frame-parameters (quote ((minibuffer . t) (width . 20) (border-width . 0) (menu-bar-lines . 0) (tool-bar-lines . 0) (unsplittable . t) (left-fringe . 0))))
  '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify)))
  '(version-control t))
@@ -319,34 +319,34 @@
 
 ;; CEDET
 
-(load-file (concat dotfiles-dir "/cedet-1.0/common/cedet.elc"))
-(global-ede-mode t)                      ; Enable the Project management system
-(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion 
-(global-srecode-minor-mode 1)            ; Enable template insertion menu
+;;(load-file (concat dotfiles-dir "/cedet-1.0/common/cedet.el"))
+;;(global-ede-mode t)                      ; Enable the Project management system
+;;(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion 
+;;(global-srecode-minor-mode 1)            ; Enable template insertion menu
 
-(require 'semantic-ia)
-(require 'semantic-gcc)
+;;(require 'semantic-ia)
+;;(require 'semantic-gcc)
 
-(defun my-cedet-hook ()
-  (local-set-key [(meta return)] 'semantic-ia-complete-symbol-menu)
-  (local-set-key "\C-c?" 'semantic-ia-complete-symbol-menu)
+;; (defun my-cedet-hook ()
+;;  (local-set-key [(meta return)] 'semantic-ia-complete-symbol-menu)
+;;  (local-set-key "\C-c?" 'semantic-ia-complete-symbol-menu)
     ;; (local-set-key "\C-c>" 'semantic-complete-analyze-inline)
     ;; (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle)
     ;; (local-set-key "." 'semantic-complete-self-insert)
     ;; (local-set-key ">" 'semantic-complete-self-insert)
-  (local-set-key "\C-ch" 'eassist-switch-h-cpp)
-  (local-set-key "\C-cl" 'eassist-list-methods)
-  (local-set-key "\C-c\C-r" 'semantic-symref)
-  )
-(add-hook 'c-mode-common-hook 'my-cedet-hook)
+;;  (local-set-key "\C-ch" 'eassist-switch-h-cpp)
+;;  (local-set-key "\C-cl" 'eassist-list-methods)
+;;  (local-set-key "\C-c\C-r" 'semantic-symref)
+;;  )
+;;(add-hook 'c-mode-common-hook 'my-cedet-hook)
 
 (require 'sr-speedbar)
 (global-set-key [(meta s)] 'sr-speedbar-toggle)
 
 ;; ECB
 
-(load-file (concat dotfiles-dir "/vendor/ecb-2.40/ecb.elc"))
-(require 'ecb)
+;; (load-file (concat dotfiles-dir "/vendor/ecb-2.40/ecb.el"))
+;; (require 'ecb)
 ;; (ecb-activate)
 
 

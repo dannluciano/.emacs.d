@@ -1,7 +1,7 @@
 (message "Darwin")
 
 (set-frame-font "Menlo-14")
-(set-frame-position (selected-frame) 0 20);
+;; (set-frame-position (selected-frame) 0 20);
 ;; Textmate
 
 (require 'textmate)
