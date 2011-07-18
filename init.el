@@ -319,7 +319,7 @@
 
 ;; CEDET
 
-(load-file (concat dotfiles-dir "/cedet-1.0/common/cedet.el"))
+(load-file (concat dotfiles-dir "/cedet/common/cedet.elc")) ;
 (global-ede-mode t)                      ; Enable the Project management system
 (semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion 
 (global-srecode-minor-mode 1)            ; Enable template insertion menu
@@ -345,8 +345,9 @@
 
 ;; ECB
 
-(load-file (concat dotfiles-dir "/vendor/ecb-2.40/ecb.el"))
-(require 'ecb)
+;; (load-file (concat dotfiles-dir "/ecb/ecb.el"))
+;; (require 'ecb)
+;; (require 'ecb-autoloads)
 ;; (ecb-activate)
 
 
