@@ -111,7 +111,6 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme/themes"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/yasnippet"))
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/ecb-2.40"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/auctex"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/auctex/preview"))
 
@@ -345,8 +344,10 @@
 
 ;; ECB
 
-;; (load-file (concat dotfiles-dir "/ecb/ecb.el"))
-;; (require 'ecb)
+(setq stack-trace-on-error t)
+(add-to-list 'load-path (concat dotfiles-dir "/ecb"))
+(load-file (concat dotfiles-dir "/ecb/ecb.elc"))
+(require 'ecb)
 ;; (require 'ecb-autoloads)
 ;; (ecb-activate)
 
