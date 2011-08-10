@@ -1,9 +1,10 @@
 (message "Darwin")
 
 (set-frame-font "Menlo-14")
-;; (set-frame-position (selected-frame) 0 20);
-;; Textmate
+(set-frame-position (selected-frame) 0 20);
 
+
+;; Textmate
 (require 'textmate)
 (require 'peepopen)
 (textmate-mode)
@@ -12,7 +13,6 @@
 
 
 ;; Mac-friendley keys map
-
 (global-set-key (kbd "s-b") 'list-buffers)
 (global-set-key (kbd "s-0") 'delete-window)
 (global-set-key (kbd "s-1") 'delete-other-windows)

@@ -7,7 +7,7 @@
 ;; Keywords: erlang, languages, processes
 ;; Date:     2000-09-11
 
-;; Lars Thorsén's modifications of 2000-06-07 included.
+;; Lars ThorsÃ©n's modifications of 2000-06-07 included.
  
 ;; The original version of this package was written by Robert Virding.
 ;;

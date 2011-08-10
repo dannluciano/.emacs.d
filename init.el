@@ -10,22 +10,23 @@
 (setq user-mail-address "dannluciano@gmail.com")
 
 (push "/usr/local/bin" exec-path)
-(push "/usr/texbin/" exec-path)
+(push "/usr/texbin" exec-path)
 
 (setenv "PATH"
 				(concat (getenv "PATH")
-								"/usr/local/bin"
-								"/usr/texbin/"))
+								":" "/usr/local/bin"
+								":" "/usr/texbin/"))
 
-(setq ns-pop-up-frames nil)
 (setq visible-bell 1)
 (setq ring-bell-function 'ignore)
-
 (setq dotfiles-dir (file-name-directory (or (buffer-file-name) load-file-name)))
-
+(setq ns-pop-up-frames nil)
+(setq auto-save-default nil)
+(setq-default tab-width 2)
+(setq TeX-PDF-mode t)
+;; (setq-default indent-tabs-mode nil)
 ;; (setq ns-command-modifier 'meta) ;; Change Meta key for Command
 (windmove-default-keybindings 'meta) ;;Change Keys for Switching Windows
-
 ;; (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
@@ -40,19 +41,13 @@
  kept-old-versions 2
  version-control t) ;; use versioned backups
 
-(setq ns-pop-up-frames nil)
-(setq auto-save-default nil)
-(setq-default tab-width 2)
-;; (setq-default indent-tabs-mode nil)
 (fset 'yes-or-no-p 'y-or-n-p)
 (delete-selection-mode t)
 (blink-cursor-mode t)
 (show-paren-mode t)
 (column-number-mode t)
-;; (set-fringe-style -1)
+(set-fringe-style -1)
 (tooltip-mode -1)
-
-;; (setq TeX-PDF-mode t)
 
 ;; Set Encondig UTF-8
 (set-terminal-coding-system 'utf-8)
@@ -60,53 +55,38 @@
 (prefer-coding-system 'utf-8)
 
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(default-frame-alist (quote ((tool-bar-lines . 0) (width . 158) (height . 46) (menu-bar-lines . 1) (border-color . "#000000") (mouse-color . "sienna1") (vertical-scroll-bars) (foreground-color . "#839496") (background-color . "#002b36") (background-mode . dark) (cursor-color . "#839496") (frame-font . "Menlo-14"))))
- '(pop-up-frame-alist (quote ((tool-bar-lines . 0) (width . 158) (height . 46) (menu-bar-lines . 1) (border-color . "#000000") (mouse-color . "sienna1") (vertical-scroll-bars) (foreground-color . "#839496") (background-color . "#002b36") (background-mode . dark) (cursor-color . "#839496") (frame-font . "Menlo-14"))))
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(doc-view-continuous t)
- '(ecb-auto-activate nil)
- '(ecb-compilation-buffer-names (quote (("*Calculator*") ("*vc*") ("*vc-diff*") ("*Apropos*") ("*Occur*") ("*shell*" . t) ("\\*[cC]ompilation.*\\*" . t) ("\\*i?grep.*\\*" . t) ("*JDEE Compile Server*") ("*Help*") ("*Completions*") ("*Backtrace*") ("*Compile-log*") ("*bsh*") ("*Messages*"))))
- '(ecb-directories-update-speedbar t)
- '(ecb-eshell-auto-activate t)
- '(ecb-eshell-enlarge-when-eshell t)
- '(ecb-layout-name "left3")
- '(ecb-layout-window-sizes nil)
  '(ecb-options-version "2.40")
- '(ecb-primary-secondary-mouse-buttons (quote mouse-1--mouse-2))
- '(ecb-tip-of-the-day nil)
- '(ecb-tree-buffer-style (quote image))
- '(ecb-type-tag-expansion (quote ((default "class" "interface" "group" "namespace") (c-mode . all-specifiers))))
- '(ecb-vc-enable-support t)
- '(ecb-windows-width 0.2)
  '(fill-column 80)
  '(global-font-lock-mode t nil (font-lock))
  '(inhibit-startup-screen t)
  '(initial-buffer-choice t)
- '(ispell-local-dictionary "brasileiro")
+ '(ispell-local-dictionary "pt_BR")
+ '(ispell-program-name "/usr/local/bin/aspell")
  '(iswitchb-mode t nil (iswitchb))
  '(mouse-avoidance-mode (quote animate) nil (avoid))
  '(mouse-wheel-mode t nil (mwheel))
- '(pop-up-frame-alist (quote ((vertical-scroll-bars . right) (tool-bar-lines . 0) (width . 80) (height . 46) (menu-bar-lines . 1) (background-color . "#000000") (background-mode . dark) (border-color . "#000000") (cursor-color . "#FFA560") (foreground-color . "#F6F3E8") (mouse-color . "sienna1"))))
  '(save-place t nil (saveplace))
  '(scroll-bar-mode nil)
  '(server-mode t)
- '(speedbar-frame-parameters (quote ((minibuffer . t) (width . 20) (border-width . 0) (menu-bar-lines . 0) (tool-bar-lines . 0) (unsplittable . t) (left-fringe . 0))))
  '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify)))
  '(version-control t))
 
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  )
 
 ;; LoadPath
 
 (add-to-list 'load-path dotfiles-dir)
+(add-to-list 'load-path (concat dotfiles-dir "/ecb"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme/themes"))
@@ -115,14 +95,18 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/auctex/preview"))
 
 
-;; Autopair
+;; Aspell
+(setq-default ispell-program-name "aspell")
+(setq ispell-dictionary "pt_BR")
+(add-hook 'latex-mode-hook 'flyspell-mode)
 
+
+;; Autopair
 (require 'autopair)
 (autopair-global-mode)
 
 
 ;; ELPA
-
 (require 'package)
 (setq package-archives '(
        ("ELPA" . "http://tromey.com/elpa/")
@@ -134,7 +118,6 @@
 
 
 ;; Color-Theme
-
 (require 'color-theme)
 (color-theme-initialize)
 (setq color-theme-is-global t)
@@ -145,19 +128,16 @@
 
 
 ;; YASnippet
-
 (require 'yasnippet)
 (yas/initialize)
 (yas/load-directory (concat dotfiles-dir "vendor/yasnippet/snippets"))
 
 
 ;; WhiteSpace
-
 (require 'whitespace)
 
 
 ;; Eshell
-
 (require 'ansi-color)
 (require 'eshell)
 (defun eshell-handle-ansi-color ()
@@ -167,7 +147,6 @@
 
 
 ;; Recompile Function
-;; https://github.com/technomancy/emacs-starter-kit/blob/master/starter-kit-defuns.el#L158
 (defun recompile-init ()
   "Byte-compile all your dotfiles again."
   (interactive)
@@ -190,7 +169,6 @@
   (insert (format-time-string "%c" (current-time))))
 
 ;; C Mode
-
 ;; A partial list of the better known C styles:
 ;;     “gnu”: The default style for GNU projects
 ;;     “k&r”: What Kernighan and Ritchie, the authors of C used in their book
@@ -200,8 +178,6 @@
 ;;     “python”: What Python developers use for extension modules
 ;;     “java”: The default style for java-mode (see below)
 ;;     “user”: When you want to define your own style
-
-;; (add-hook 'c-mode-hook 'flymake-mode)
 
 (defun find-makefile ()
   (let ((fn buffer-file-name))
@@ -239,8 +215,19 @@
 
 
 ;; Erlang Mode
-(require 'erlang)
+(autoload 'erlang-mode "erlang-mode" "Mode for editing ERLANG files")
 (add-to-list 'auto-mode-alist '("\\.erl$" . erlang-mode))
+
+
+;; Markdown
+(autoload 'markdown-mode "markdown-mode"
+  "Mode for editing markdown files")
+(add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
+
+
+;; Textile
+(autoload 'textile-mode "textile-mode" "Mode for editing textile files")
+(add-to-list 'auto-mode-alist '("\\.textile$" . textile-mode))
 
 
 ;; Ruby Mode
@@ -249,6 +236,7 @@
   (add-to-list 'auto-mode-alist '("Capfile" . ruby-mode))
   (add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
   (add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
+	(add-to-list 'auto-mode-alist '("rakefile" . ruby-mode))
   (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
   (add-to-list 'auto-mode-alist '("\\.rb\\'" . ruby-mode))
   (add-to-list 'auto-mode-alist '("\\.ru\\'" . ruby-mode))
@@ -258,6 +246,7 @@
                                (setq c-tab-always-indent nil)
                                (require 'inf-ruby)
                                (require 'ruby-compilation))))
+
 (defun rhtml-mode-hook ()
   (autoload 'rhtml-mode "rhtml-mode" nil t)
   (add-to-list 'auto-mode-alist '("\\.erb\\'" . rhtml-mode))
@@ -269,6 +258,7 @@
   (autoload 'yaml-mode "yaml-mode" nil t)
   (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
   (add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode)))
+
 
 (defun css-mode-hook ()
   (autoload 'css-mode "css-mode" nil t)
@@ -284,7 +274,6 @@
 
 ;; ESHELL
 ;; Part of the Emacs Starter Kit
-
 (setq eshell-cmpl-cycle-completions nil
       eshell-save-history-on-exit t
       eshell-cmpl-dir-ignore "\\`\\(\\.\\.?\\|CVS\\|\\.svn\\|\\.git\\)/\\'")
@@ -317,24 +306,24 @@
 
 
 ;; CEDET
-
+(setq byte-compile-warnings nil)
 (load-file (concat dotfiles-dir "/cedet/common/cedet.elc")) ;
+(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion
 (global-ede-mode t)                      ; Enable the Project management system
-(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion 
 (global-srecode-minor-mode 1)            ; Enable template insertion menu
 
 (require 'semantic-ia)
 (require 'semantic-gcc)
 
 (defun my-cedet-hook ()
- (local-set-key [(meta return)] 'semantic-ia-complete-symbol-menu)
- (local-set-key "\C-c?" 'semantic-ia-complete-symbol-menu)
+	(local-set-key [(meta return)] 'semantic-ia-complete-symbol-menu)
+	(local-set-key "\C-c?" 'semantic-ia-complete-symbol-menu)
     (local-set-key "\C-c>" 'semantic-complete-analyze-inline)
     (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle)
-    (local-set-key "." 'semantic-complete-self-insert)
-    (local-set-key ">" 'semantic-complete-self-insert)
- (local-set-key "\C-ch" 'eassist-switch-h-cpp)
- (local-set-key "\C-cl" 'eassist-list-methods)
+    ;; (local-set-key "." 'semantic-complete-self-insert)
+    ;; (local-set-key ">" 'semantic-complete-self-insert)
+	(local-set-key "\C-ch" 'eassist-switch-h-cpp)
+	(local-set-key "\C-cl" 'eassist-list-methods)
  (local-set-key "\C-c\C-r" 'semantic-symref)
  )
 (add-hook 'c-mode-common-hook 'my-cedet-hook)
@@ -343,13 +332,29 @@
 (global-set-key [(meta s)] 'sr-speedbar-toggle)
 
 ;; ECB
-
 (setq stack-trace-on-error t)
-(add-to-list 'load-path (concat dotfiles-dir "/ecb"))
 (load-file (concat dotfiles-dir "/ecb/ecb.elc"))
 (require 'ecb)
-;; (require 'ecb-autoloads)
-;; (ecb-activate)
+
+(setq ecb-directories-update-speedbar t)
+(setq ecb-eshell-auto-activate t)
+(setq ecb-eshell-enlarge-when-eshell t)
+(setq ecb-layout-name "left3")
+(setq ecb-primary-secondary-mouse-buttons (quote mouse-1--mouse-2))
+(setq ecb-tip-of-the-day nil)
+(setq ecb-tree-buffer-style (quote image))
+(setq ecb-type-tag-expansion (quote ((default "class" "interface" "group" "namespace") (c-mode . all-specifiers))))
+(setq ecb-vc-enable-support t)
+(setq ecb-windows-width 0.2)
+
+
+;; Auto Insert Header
+;; (require 'autoinsert)
+;; (auto-insert-mode)  ;;; Adds hook to find-files-hook
+;; (setq auto-insert-directory "~/.mytemplates/") ;;; Or use custom, *NOTE* Trailing slash important
+;; (setq auto-insert-query nil) ;;; If you don't want to be prompted before insertion
+;; (define-auto-insert "\.py" "my-python-template.py")
+;; (define-auto-insert "\.php" "my-php-template.php")
 
 
 ;; LISP
@@ -372,9 +377,7 @@
     (setq erc-keywords '("dannluciano"))
 
 
-;; INFLUENCED
 ;; OTHERS
-
 (defun add-watchwords ()
   (font-lock-add-keywords
    nil '(("\\<\\(FIX\\|TODO\\|FIXME\\|HACK\\|REFACTOR\\):"
@@ -384,7 +387,6 @@
 
 (auto-compression-mode t)
 (add-hook 'text-mode-hook 'turn-on-flyspell)
-
 
 (setq system-specific-config (concat dotfiles-dir system-name ".el")
       user-specific-config (concat dotfiles-dir user-login-name ".el")
@@ -399,7 +401,6 @@
   (interactive)
   (textmate-select-line) (kill-region (region-beginning) (region-end)))
 (global-set-key [(control shift k)] 'kill-current-line)
-
 
 ;; Benchmarking
 (message "My .emacs loaded in %ds"
