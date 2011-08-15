@@ -2,8 +2,8 @@
 
 ;; Copyright (C) 2001, 2003, 2009 Eric M. Ludlam
 
-;; Author: Dann Luciano de Menezes <dannluciano@dl-macbook.local>
-;; Created: 2011-07-17 17:08:40-0300
+;; Author: Dann Luciano <dannluciano@DL-MacBook.local>
+;; Created: 2011-08-15 08:59:41-0300
 ;; Keywords: syntax
 ;; X-RCS: $Id$
 

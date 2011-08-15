@@ -2,8 +2,8 @@
 
 ;; Copyright (C) 2002, 2003, 2004, 2007 Richard Kim
 
-;; Author: Dann Luciano de Menezes <dannluciano@dl-macbook.local>
-;; Created: 2011-07-17 17:08:35-0300
+;; Author: Dann Luciano <dannluciano@DL-MacBook.local>
+;; Created: 2011-08-15 08:59:48-0300
 ;; Keywords: syntax
 ;; X-RCS: $Id$
 
