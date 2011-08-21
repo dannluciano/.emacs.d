@@ -31,6 +31,9 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
+(add-to-list 'default-frame-alist '(height . 43))
+(add-to-list 'default-frame-alist '(width . 90))
+
 ;; (setq make-backup-files nil)
 (setq
  backup-by-copying t ;; don't clobber symlinks
@@ -93,6 +96,11 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/yasnippet"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/auctex"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/auctex/preview"))
+
+
+;; 
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+(add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
 
 
 ;; Aspell
@@ -195,7 +203,7 @@
 (add-hook 'c++-mode-hook 'find-makefile)
 
 (defun my-c-common-hook()
-	(require 'member-function)
+  (require 'member-function)
   (local-set-key "\C-cm" 'expand-member-functions)
 	(turn-on-auto-fill)
 )
@@ -207,11 +215,12 @@
 )
 (add-hook 'c-mode-hook 'my-c-hook)
 
-(add-to-list 'auto-mode-alist '("\\.cpp$" . c++-mode))
 (defun my-cpp-hook()
   (c-set-style "stroustrup")
 )
 (add-hook 'c++-mode-hook 'my-cpp-hook)
+
+(add-to-list 'auto-mode-alist '("\\.cpp$" . c++-mode))
 
 
 ;; Erlang Mode
@@ -314,6 +323,10 @@
 
 (require 'semantic-ia)
 (require 'semantic-gcc)
+(require 'semanticdb)
+(global-semanticdb-minor-mode 1)
+
+(require 'eassist)
 
 (defun my-cedet-hook ()
 	(local-set-key [(meta return)] 'semantic-ia-complete-symbol-menu)
@@ -401,6 +414,13 @@
   (interactive)
   (textmate-select-line) (kill-region (region-beginning) (region-end)))
 (global-set-key [(control shift k)] 'kill-current-line)
+
+
+;; GO Game
+(autoload 'gnugo "gnugo" "Play Go" t)
+
+;; HTMLIZE
+(autoload 'htmlize "htmlize" "HTMLize" t)
 
 ;; Benchmarking
 (message "My .emacs loaded in %ds"
