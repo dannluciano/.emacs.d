@@ -32,7 +32,7 @@
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
 (add-to-list 'default-frame-alist '(height . 43))
-(add-to-list 'default-frame-alist '(width . 90))
+(add-to-list 'default-frame-alist '(width . ((/ (display-pixel-width) 4))))
 
 ;; (setq make-backup-files nil)
 (setq
@@ -98,7 +98,7 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/auctex/preview"))
 
 
-;; 
+;;
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
 
@@ -380,8 +380,8 @@
 
 ;; ERC
 
-(setq erc-server "irc.freenode.net" 
-			erc-port 6667 
+(setq erc-server "irc.freenode.net"
+			erc-port 6667
 			erc-nick "dannluciano"
 			erc-user-full-name user-full-name
 			erc-prompt-for-password t)
