@@ -1,7 +1,7 @@
-(message "Darwin")
+;; Darwin
 
-(set-frame-font "Menlo-14")
-(set-frame-position (selected-frame) (- (/ (display-pixel-width) 4) 0) 20);
+;; (set-frame-font "Menlo-12")
+(set-frame-position (selected-frame) (- (/ (display-pixel-width) 4) 0) 20)
 
 
 ;; Textmate
@@ -27,6 +27,8 @@
 (global-set-key (kbd "<s-down>") 'end-of-buffer)
 (global-set-key (kbd "<s-right>") 'end-of-line)
 (global-set-key (kbd "<s-left>") 'beginning-of-line-text)
+(global-set-key (kbd "<M-left>") 'backward-word)
+(global-set-key (kbd "<M-right>") 'forward-word)
 (global-set-key (kbd "<M-s-right>") 'next-buffer)
 (global-set-key (kbd "<M-s-left>") 'previous-buffer)
 (global-set-key (kbd "<s-return>") 'ns-toggle-fullscreen)

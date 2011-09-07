@@ -12,10 +12,7 @@
 (push "/usr/local/bin" exec-path)
 (push "/usr/texbin" exec-path)
 
-(setenv "PATH"
-				(concat (getenv "PATH")
-								":" "/usr/local/bin"
-								":" "/usr/texbin/"))
+(setenv "PATH" (concat (getenv "PATH") ":" "/usr/local/bin" ":" "/usr/texbin/"))
 
 (setq visible-bell 1)
 (setq ring-bell-function 'ignore)
@@ -24,15 +21,17 @@
 (setq auto-save-default nil)
 (setq-default tab-width 2)
 (setq TeX-PDF-mode t)
-;; (setq-default indent-tabs-mode nil)
+;; (setq indent-tabs-mode nil)
 ;; (setq ns-command-modifier 'meta) ;; Change Meta key for Command
-(windmove-default-keybindings 'meta) ;;Change Keys for Switching Windows
+;; (windmove-default-keybindings 'meta) ;;Change Keys for Switching Windows
 ;; (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
-(add-to-list 'default-frame-alist '(height . 43))
-(add-to-list 'default-frame-alist '(width . ((/ (display-pixel-width) 4))))
+;; (message (number-to-string (display-pixel-width)))
+;; (message (number-to-string (display-pixel-height)))
+(add-to-list 'default-frame-alist '(height . 49))
+(add-to-list 'default-frame-alist '(width . 90))
 
 ;; (setq make-backup-files nil)
 (setq
@@ -87,7 +86,6 @@
  )
 
 ;; LoadPath
-
 (add-to-list 'load-path dotfiles-dir)
 (add-to-list 'load-path (concat dotfiles-dir "/ecb"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/"))
@@ -96,9 +94,10 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/yasnippet"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/auctex"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/auctex/preview"))
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/nxhtml"))
 
 
-;;
+;; IBuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
 
@@ -118,7 +117,7 @@
 (require 'package)
 (setq package-archives '(
        ("ELPA" . "http://tromey.com/elpa/")
-			 ("gnu" . "http://elpa.gnu.org/packages/")
+       ("gnu" . "http://elpa.gnu.org/packages/")
        ("marmalade" . "http://marmalade-repo.org/packages/")
 ))
 (add-to-list 'load-path (concat dotfiles-dir "/elpa"))
@@ -160,21 +159,6 @@
   (interactive)
   (byte-recompile-directory dotfiles-dir 0))
 
-(defun lorem ()
-  "Insert a lorem ipsum."
-  (interactive)
-  (insert "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do "
-          "eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim"
-          "ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut "
-          "aliquip ex ea commodo consequat. Duis aute irure dolor in "
-          "reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla "
-          "pariatur. Excepteur sint occaecat cupidatat non proident, sunt in "
-          "culpa qui officia deserunt mollit anim id est laborum."))
-
-(defun insert-date ()
-  "Insert a time-stamp according to locale's date and time format."
-  (interactive)
-  (insert (format-time-string "%c" (current-time))))
 
 ;; C Mode
 ;; A partial list of the better known C styles:
@@ -191,39 +175,32 @@
   (let ((fn buffer-file-name))
     (let ((dir (file-name-directory fn)))
       (while (and (not (file-exists-p (concat dir "/Makefile")))
-	          (not (equal dir (file-truename (concat dir "/..")))))
+        (not (equal dir (file-truename (concat dir "/..")))))
         (setf dir (file-truename (concat dir "/.."))))
       (if (file-exists-p (concat dir "/Makefile"))
-				(flymake-mode)
-				)
-			)
-		)
-	)
+        (flymake-mode)))))
 (add-hook 'c-mode-hook 'find-makefile)
 (add-hook 'c++-mode-hook 'find-makefile)
 
 (defun my-c-common-hook()
   (require 'member-function)
   (local-set-key "\C-cm" 'expand-member-functions)
-	(turn-on-auto-fill)
-)
+  (turn-on-auto-fill))
 (add-hook 'c-mode-hook 'my-c-common-hook)
 (add-hook 'c++-mode-hook 'my-c-common-hook)
 
 (defun my-c-hook()
-  (c-set-style "gnu")
-)
+  (c-set-style "gnu"))
 (add-hook 'c-mode-hook 'my-c-hook)
 
 (defun my-cpp-hook()
-  (c-set-style "stroustrup")
-)
+  (c-set-style "stroustrup"))
 (add-hook 'c++-mode-hook 'my-cpp-hook)
 
 (add-to-list 'auto-mode-alist '("\\.cpp$" . c++-mode))
 
 
-;; Erlang Mode
+;; Erlang
 (autoload 'erlang-mode "erlang-mode" "Mode for editing ERLANG files")
 (add-to-list 'auto-mode-alist '("\\.erl$" . erlang-mode))
 
@@ -245,7 +222,7 @@
   (add-to-list 'auto-mode-alist '("Capfile" . ruby-mode))
   (add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
   (add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
-	(add-to-list 'auto-mode-alist '("rakefile" . ruby-mode))
+  (add-to-list 'auto-mode-alist '("rakefile" . ruby-mode))
   (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
   (add-to-list 'auto-mode-alist '("\\.rb\\'" . ruby-mode))
   (add-to-list 'auto-mode-alist '("\\.ru\\'" . ruby-mode))
@@ -262,6 +239,7 @@
   (add-to-list 'auto-mode-alist '("\\.rjs\\'" . rhtml-mode))
   (add-hook 'rhtml-mode '(lambda ()
                            (define-key rhtml-mode-map (kbd "M-s") 'save-buffer))))
+
 
 (defun yaml-mode-hook ()
   (autoload 'yaml-mode "yaml-mode" nil t)
@@ -284,9 +262,8 @@
 ;; ESHELL
 ;; Part of the Emacs Starter Kit
 (setq eshell-cmpl-cycle-completions nil
-      eshell-save-history-on-exit t
-      eshell-cmpl-dir-ignore "\\`\\(\\.\\.?\\|CVS\\|\\.svn\\|\\.git\\)/\\'")
-
+  eshell-save-history-on-exit t
+  eshell-cmpl-dir-ignore "\\`\\(\\.\\.?\\|CVS\\|\\.svn\\|\\.git\\)/\\'")
 
 (defvar eshell-vc-dirty
   " $ " "String to use for the prompt when there are uncomitted checkins.")
@@ -294,18 +271,17 @@
 (defun eshell-vc-prompt ()
   "Return a prompt with VC branch and dirty state."
   (let ((branch (eshell/branch)))
-    (propertize (concat (and branch (concat branch " "))
-                        ;; (eshell/pwd)
-                        (cond ((= (user-uid) 0) " # ")
+    (propertize (concat (eshell/pwd)
+												(and branch (concat " (" (concat branch ") ")))
+                        (cond ((= (user-uid) 0) "# ")
                               ((and branch (eshell/vc-dirty)) eshell-vc-dirty)
-                              (t " $ ")))
+                              (t "$ ")))
                 'face 'eshell-prompt)))
 
 (defun eshell-vc-skip-prompt ()
   "Skip the prompt using text properties instead of a regex."
   (goto-char (next-property-change (point) nil (point-max))))
 
-;; TODO: make this work with VC if possible rather than magit
 (require 'magit)
 (defalias 'eshell/branch 'magit-get-current-branch)
 (defun eshell/vc-dirty () (not (magit-everything-clean-p)))
@@ -314,7 +290,22 @@
       eshell-skip-prompt-function #'eshell-vc-skip-prompt)
 
 
-;; CEDET
+;; AutoComplete
+;; (add-to-list 'load-path (concat dotfiles-dir "/vendor/auto-complete"))
+;; (setq ac-dictionary-directories ())
+;; (add-to-list 'ac-dictionary-directories
+;;   (concat dotfiles-dir "/vendor/auto-complete/ac-dict"))
+;; (require 'auto-complete-config)
+;; (ac-config-default)
+;; (setq ac-auto-show-menu nil)
+;; (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
+
+;; ;; SourcePair
+;; (require 'sourcepair)
+;; (global-set-key (kbd "s-5") 'sourcepair-load)
+
+
+;; ;; CEDET
 (setq byte-compile-warnings nil)
 (load-file (concat dotfiles-dir "/cedet/common/cedet.elc")) ;
 (semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion
@@ -329,36 +320,36 @@
 (require 'eassist)
 
 (defun my-cedet-hook ()
-	(local-set-key [(meta return)] 'semantic-ia-complete-symbol-menu)
-	(local-set-key "\C-c?" 'semantic-ia-complete-symbol-menu)
+ (local-set-key [(meta return)] 'semantic-ia-complete-symbol-menu)
+ (local-set-key "\C-c?" 'semantic-ia-complete-symbol-menu)
     (local-set-key "\C-c>" 'semantic-complete-analyze-inline)
     (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle)
     ;; (local-set-key "." 'semantic-complete-self-insert)
     ;; (local-set-key ">" 'semantic-complete-self-insert)
-	(local-set-key "\C-ch" 'eassist-switch-h-cpp)
-	(local-set-key "\C-cl" 'eassist-list-methods)
+ (local-set-key "\C-ch" 'eassist-switch-h-cpp)
+ (local-set-key "\C-cl" 'eassist-list-methods)
  (local-set-key "\C-c\C-r" 'semantic-symref)
  )
 (add-hook 'c-mode-common-hook 'my-cedet-hook)
 
-(require 'sr-speedbar)
-(global-set-key [(meta s)] 'sr-speedbar-toggle)
+;; (require 'sr-speedbar)
+;; (global-set-key [(meta s)] 'sr-speedbar-toggle)
 
-;; ECB
-(setq stack-trace-on-error t)
-(load-file (concat dotfiles-dir "/ecb/ecb.elc"))
-(require 'ecb)
+;; ;; ECB
+;; (setq stack-trace-on-error t)
+;; (load-file (concat dotfiles-dir "/ecb/ecb.elc"))
+;; (require 'ecb)
 
-(setq ecb-directories-update-speedbar t)
-(setq ecb-eshell-auto-activate t)
-(setq ecb-eshell-enlarge-when-eshell t)
-(setq ecb-layout-name "left3")
-(setq ecb-primary-secondary-mouse-buttons (quote mouse-1--mouse-2))
-(setq ecb-tip-of-the-day nil)
-(setq ecb-tree-buffer-style (quote image))
-(setq ecb-type-tag-expansion (quote ((default "class" "interface" "group" "namespace") (c-mode . all-specifiers))))
-(setq ecb-vc-enable-support t)
-(setq ecb-windows-width 0.2)
+;; (setq ecb-directories-update-speedbar t)
+;; (setq ecb-eshell-auto-activate t)
+;; (setq ecb-eshell-enlarge-when-eshell t)
+;; (setq ecb-layout-name "left3")
+;; (setq ecb-primary-secondary-mouse-buttons (quote mouse-1--mouse-2))
+;; (setq ecb-tip-of-the-day nil)
+;; (setq ecb-tree-buffer-style (quote image))
+;; (setq ecb-type-tag-expansion (quote ((default "class" "interface" "group" "namespace") (c-mode . all-specifiers))))
+;; (setq ecb-vc-enable-support t)
+;; (setq ecb-windows-width 0.2)
 
 
 ;; Auto Insert Header
@@ -371,39 +362,51 @@
 
 
 ;; LISP
-
 (defun my-lisp-hook ()
-  (require 'quack)
-)
+  (require 'quack))
 (add-hook 'lisp-mode 'my-lisp-hook)
 
 
 ;; ERC
-
 (setq erc-server "irc.freenode.net"
-			erc-port 6667
-			erc-nick "dannluciano"
-			erc-user-full-name user-full-name
-			erc-prompt-for-password t)
+  erc-port 6667
+  erc-nick "dannluciano"
+  erc-user-full-name user-full-name
+  erc-prompt-for-password t)
 
 (require 'erc-match)
     (setq erc-keywords '("dannluciano"))
 
 
 ;; OTHERS
+(defun lorem ()
+  "Insert a lorem ipsum."
+  (interactive)
+  (insert "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do "
+          "eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim"
+          "ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut "
+          "aliquip ex ea commodo consequat. Duis aute irure dolor in "
+          "reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla "
+          "pariatur. Excepteur sint occaecat cupidatat non proident, sunt in "
+          "culpa qui officia deserunt mollit anim id est laborum."))
+
+(defun insert-date ()
+  "Insert a time-stamp according to locale's date and time format."
+  (interactive)
+  (insert (format-time-string "%c" (current-time))))
+
 (defun add-watchwords ()
   (font-lock-add-keywords
    nil '(("\\<\\(FIX\\|TODO\\|FIXME\\|HACK\\|REFACTOR\\):"
           1 font-lock-warning-face t))))
 (add-hook 'coding-hook 'add-watchwords)
 
-
 (auto-compression-mode t)
 (add-hook 'text-mode-hook 'turn-on-flyspell)
 
 (setq system-specific-config (concat dotfiles-dir system-name ".el")
       user-specific-config (concat dotfiles-dir user-login-name ".el")
-			system-type-specific-config (concat dotfiles-dir (prin1-to-string system-type) ".el"))
+      system-type-specific-config (concat dotfiles-dir (prin1-to-string system-type) ".el"))
 
 (if (file-exists-p system-specific-config) (load system-specific-config))
 (if (file-exists-p user-specific-config) (load user-specific-config))
@@ -421,6 +424,9 @@
 
 ;; HTMLIZE
 (autoload 'htmlize "htmlize" "HTMLize" t)
+
+;; NxHtml
+(autoload 'autostart "nxhtml" "NXHTML" t)
 
 ;; Benchmarking
 (message "My .emacs loaded in %ds"
