@@ -1,7 +1,7 @@
 ;; Darwin
 
 ;; (set-frame-font "Menlo-12")
-(set-frame-position (selected-frame) (- (/ (display-pixel-width) 4) 0) 20)
+(set-frame-position (selected-frame) (/ (display-pixel-width) 4) 20)
 
 
 ;; Textmate

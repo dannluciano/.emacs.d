@@ -30,9 +30,11 @@
 
 ;; (message (number-to-string (display-pixel-width)))
 ;; (message (number-to-string (display-pixel-height)))
-(add-to-list 'default-frame-alist '(height . 49))
-(add-to-list 'default-frame-alist '(width . 90))
+;; (message (number-to-string (truncate (/ (display-pixel-width) 14.22))))
+;; (message (number-to-string (truncate (/ (display-pixel-height) 16.32))))
 
+(set-frame-width (selected-frame) (truncate (/ (display-pixel-width) 14.22)))
+(set-frame-height (selected-frame) (truncate (/ (display-pixel-height) 16.32)))
 ;; (setq make-backup-files nil)
 (setq
  backup-by-copying t ;; don't clobber symlinks
