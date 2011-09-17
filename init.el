@@ -28,13 +28,12 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
-;; (message (number-to-string (display-pixel-width)))
-;; (message (number-to-string (display-pixel-height)))
-;; (message (number-to-string (truncate (/ (display-pixel-width) 14.22))))
-;; (message (number-to-string (truncate (/ (display-pixel-height) 16.32))))
+(defun frame-resize ()
+	(interactive)
+	(set-frame-width (selected-frame) (truncate (/ (display-pixel-width) 14.22)))
+	(set-frame-height (selected-frame) (truncate (/ (display-pixel-height) 16.32)))
+	(set-frame-position (selected-frame) (/ (display-pixel-width) 4) 0))
 
-(set-frame-width (selected-frame) (truncate (/ (display-pixel-width) 14.22)))
-(set-frame-height (selected-frame) (truncate (/ (display-pixel-height) 16.32)))
 ;; (setq make-backup-files nil)
 (setq
  backup-by-copying t ;; don't clobber symlinks
@@ -63,6 +62,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
  '(doc-view-continuous t)
  '(ecb-options-version "2.40")
  '(fill-column 80)
@@ -70,14 +70,16 @@
  '(inhibit-startup-screen t)
  '(initial-buffer-choice t)
  '(ispell-local-dictionary "pt_BR")
- '(ispell-program-name "/usr/local/bin/aspell")
+ '(ispell-program-name "/usr/local/bin/aspell" t)
  '(iswitchb-mode t nil (iswitchb))
  '(mouse-avoidance-mode (quote animate) nil (avoid))
  '(mouse-wheel-mode t nil (mwheel))
  '(save-place t nil (saveplace))
  '(scroll-bar-mode nil)
  '(server-mode t)
+ '(show-paren-mode t)
  '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify)))
+ '(tool-bar-mode nil)
  '(version-control t))
 
 (custom-set-faces
@@ -293,55 +295,53 @@
 
 
 ;; AutoComplete
-;; (add-to-list 'load-path (concat dotfiles-dir "/vendor/auto-complete"))
-;; (setq ac-dictionary-directories ())
-;; (add-to-list 'ac-dictionary-directories
-;;   (concat dotfiles-dir "/vendor/auto-complete/ac-dict"))
-;; (require 'auto-complete-config)
-;; (ac-config-default)
-;; (setq ac-auto-show-menu nil)
-;; (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
-
-;; ;; SourcePair
-;; (require 'sourcepair)
-;; (global-set-key (kbd "s-5") 'sourcepair-load)
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/auto-complete"))
+(setq ac-dictionary-directories ())
+(add-to-list 'ac-dictionary-directories
+						 (concat dotfiles-dir "/vendor/auto-complete/ac-dict"))
+(require 'auto-complete-config)
+(ac-config-default)
+(setq ac-auto-show-menu nil)
+(define-key ac-mode-map (kbd "M-/") 'auto-complete)
 
 
-;; ;; CEDET
-(setq byte-compile-warnings nil)
-(load-file (concat dotfiles-dir "/cedet/common/cedet.elc")) ;
-(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion
-(global-ede-mode t)                      ; Enable the Project management system
-(global-srecode-minor-mode 1)            ; Enable template insertion menu
+;; SourcePair
+(require 'sourcepair)
+(global-set-key (kbd "s-5") 'sourcepair-load)
 
-(require 'semantic-ia)
-(require 'semantic-gcc)
-(require 'semanticdb)
-(global-semanticdb-minor-mode 1)
 
-(require 'eassist)
+;; CEDET
+;; (setq byte-compile-warnings nil)
+;; (load-file (concat dotfiles-dir "/cedet/common/cedet.elc"))
+;; (semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion
+;; (global-ede-mode t)                      ; Enable the Project management system
+;; (global-srecode-minor-mode 1)            ; Enable template insertion menu
+;; (require 'semantic-ia)
+;; (require 'semantic-gcc)
+;; (require 'semanticdb)
+;; (global-semanticdb-minor-mode 1)
+;; (require 'eassist)
 
-(defun my-cedet-hook ()
- (local-set-key [(meta return)] 'semantic-ia-complete-symbol-menu)
- (local-set-key "\C-c?" 'semantic-ia-complete-symbol-menu)
-    (local-set-key "\C-c>" 'semantic-complete-analyze-inline)
-    (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle)
-    ;; (local-set-key "." 'semantic-complete-self-insert)
-    ;; (local-set-key ">" 'semantic-complete-self-insert)
- (local-set-key "\C-ch" 'eassist-switch-h-cpp)
- (local-set-key "\C-cl" 'eassist-list-methods)
- (local-set-key "\C-c\C-r" 'semantic-symref)
- )
-(add-hook 'c-mode-common-hook 'my-cedet-hook)
+;; (defun my-cedet-hook ()
+;;  (local-set-key [(meta return)] 'semantic-ia-complete-symbol-menu)
+;;  (local-set-key "\C-c?" 'semantic-ia-complete-symbol-menu)
+;;     (local-set-key "\C-c>" 'semantic-complete-analyze-inline)
+;;     (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle)
+;;     ;; (local-set-key "." 'semantic-complete-self-insert)
+;;     ;; (local-set-key ">" 'semantic-complete-self-insert)
+;;  (local-set-key "\C-ch" 'eassist-switch-h-cpp)
+;;  (local-set-key "\C-cl" 'eassist-list-methods)
+;;  (local-set-key "\C-c\C-r" 'semantic-symref)
+;;  )
+;; (add-hook 'c-mode-common-hook 'my-cedet-hook)
 
 ;; (require 'sr-speedbar)
 ;; (global-set-key [(meta s)] 'sr-speedbar-toggle)
 
-;; ;; ECB
+;; ECB
 ;; (setq stack-trace-on-error t)
 ;; (load-file (concat dotfiles-dir "/ecb/ecb.elc"))
 ;; (require 'ecb)
-
 ;; (setq ecb-directories-update-speedbar t)
 ;; (setq ecb-eshell-auto-activate t)
 ;; (setq ecb-eshell-enlarge-when-eshell t)

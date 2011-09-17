@@ -1,7 +1,6 @@
 ;; Darwin
 
 ;; (set-frame-font "Menlo-12")
-(set-frame-position (selected-frame) (/ (display-pixel-width) 4) 20)
 
 
 ;; Textmate
@@ -34,3 +33,4 @@
 (global-set-key (kbd "<s-return>") 'ns-toggle-fullscreen)
 
 ;; (run-with-idle-timer 0.1 nil 'ns-toggle-fullscreen)
+(run-with-idle-timer 0.1 nil 'frame-resize)
