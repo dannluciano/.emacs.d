@@ -21,7 +21,7 @@
 (setq auto-save-default nil)
 (setq-default tab-width 2)
 (setq TeX-PDF-mode t)
-;; (setq indent-tabs-mode nil)
+(setq indent-tabs-mode nil)
 ;; (setq ns-command-modifier 'meta) ;; Change Meta key for Command
 ;; (windmove-default-keybindings 'meta) ;;Change Keys for Switching Windows
 ;; (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
@@ -29,10 +29,11 @@
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
 (defun frame-resize ()
-	(interactive)
-	(set-frame-width (selected-frame) (truncate (/ (display-pixel-width) 14.22)))
-	(set-frame-height (selected-frame) (truncate (/ (display-pixel-height) 16.32)))
-	(set-frame-position (selected-frame) (/ (display-pixel-width) 4) 0))
+  (interactive)
+  (set-frame-width (selected-frame) (truncate (/ (display-pixel-width) 14.22)))
+  (set-frame-height (selected-frame) (truncate (/ (display-pixel-height) 16.32)))
+  (set-frame-position (selected-frame) (/ (display-pixel-width) 4) 0))
+;; (add-hook 'after-make-frame-functions 'frame-resize)
 
 ;; (setq make-backup-files nil)
 (setq
