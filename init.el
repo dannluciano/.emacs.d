@@ -1,6 +1,9 @@
 ;; Begin init.el
 ;; Author: Dann Luciano de Menezes <dannluciano@gmail.com>
-;; Very much influenced by https://github.com/topfunky/emacs-starter-kit
+;; Very much influenced by
+;;   https://github.com/technomancy/emacs-starter-kit
+;;   https://github.com/topfunky/emacs-starter-kit
+;;   https://github.com/dimiro1/.emacs
 
 ;; Benchmarking
 (defvar *emacs-load-start* (current-time))
