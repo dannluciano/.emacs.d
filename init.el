@@ -6,7 +6,7 @@
 (defvar *emacs-load-start* (current-time))
 
 ;; Initial Options
-(setq user-full-name "Dann Luciano de Menezes")
+(setq user-full-name "Dann Luciano")
 (setq user-mail-address "dannluciano@gmail.com")
 
 (push "/usr/local/bin" exec-path)
@@ -379,6 +379,10 @@
 
 (require 'erc-match)
     (setq erc-keywords '("dannluciano"))
+
+(setq erc-kill-buffer-on-part t)
+(setq erc-kill-queries-on-quit t)
+(setq erc-kill-server-buffer-on-quit t)
 
 
 ;; OTHERS
