@@ -84,6 +84,7 @@
  '(show-paren-mode t)
  '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify)))
  '(tool-bar-mode nil)
+ '(twit-pass "twitterdlcorp")
  '(version-control t))
 
 (custom-set-faces
@@ -95,7 +96,8 @@
 
 ;; LoadPath
 (add-to-list 'load-path dotfiles-dir)
-(add-to-list 'load-path (concat dotfiles-dir "/ecb"))
+;; (add-to-list 'load-path (concat dotfiles-dir "/ecb"))
+(add-to-list 'load-path (concat dotfiles-dir "/twittering-mode"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme/themes"))
@@ -437,6 +439,25 @@
 
 ;; NxHtml
 (autoload 'autostart "nxhtml" "NXHTML" t)
+
+;; EMMS
+(require 'emms-setup)
+(emms-devel)
+;; (emms-standard)
+(emms-default-players)
+(setq emms-playlist-buffer-name "*Musics*")
+(require 'emms-mode-line)
+(emms-mode-line 1)
+(require 'emms-playing-time)
+(emms-playing-time 1)
+(require 'emms-lyrics)
+(emms-lyrics 1)
+(require 'xwl-emms)
+
+;; Twittering
+(require 'twittering-mode)
+(setq twittering-icon-mode t)
+(add-hook 'twittering-edit-mode-hook (lambda () (ispell-minor-mode) (flyspell-mode)))
 
 ;; Benchmarking
 (message "My .emacs loaded in %ds"

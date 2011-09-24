@@ -4,7 +4,7 @@
 
 
 ;;;### (autoloads (twitter-status-edit twitter-get-friends-timeline)
-;;;;;;  "twitter" "twitter.el" (19851 55664))
+;;;;;;  "twitter" "twitter.el" (20090 10648))
 ;;; Generated autoloads from twitter.el
 
 (autoload 'twitter-get-friends-timeline "twitter" "\
@@ -28,7 +28,7 @@ message.
 
 ;;;***
 
-;;;### (autoloads nil nil ("twitter-pkg.el") (19851 55664 527623))
+;;;### (autoloads nil nil ("twitter-pkg.el") (20090 10648 433139))
 
 ;;;***
 
