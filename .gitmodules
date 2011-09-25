@@ -1,3 +1,9 @@
+[submodule "cedet"]
+	path = cedet
+	url = https://github.com/emacsmirror/cedet.git
 [submodule "ecb"]
 	path = ecb
 	url = https://github.com/emacsmirror/ecb.git
+[submodule "twittering-mode"]
+	path = twittering-mode
+	url = https://github.com/hayamiz/twittering-mode.git
