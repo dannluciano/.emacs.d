@@ -56,6 +56,7 @@
 (set-fringe-style -1)
 (tooltip-mode -1)
 
+
 ;; Set Encondig UTF-8
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
@@ -69,8 +70,10 @@
  '(column-number-mode t)
  '(doc-view-continuous t)
  '(ecb-options-version "2.40")
+ '(erc-modules (quote (autoaway autojoin button completion fill irccontrols list match menu move-to-prompt netsplit networks noncommands notify readonly ring sound stamp spelling track)))
  '(fill-column 80)
  '(global-font-lock-mode t nil (font-lock))
+ '(global-semantic-idle-completions-mode t nil (semantic/idle))
  '(inhibit-startup-screen t)
  '(initial-buffer-choice t)
  '(ispell-local-dictionary "pt_BR")
@@ -84,7 +87,6 @@
  '(show-paren-mode t)
  '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify)))
  '(tool-bar-mode nil)
- '(twit-pass "twitterdlcorp")
  '(version-control t))
 
 (custom-set-faces
@@ -106,10 +108,11 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/auctex/preview"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/nxhtml"))
 
+(add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
+
 
 ;; IBuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
-(add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
 
 
 ;; Aspell
@@ -301,19 +304,23 @@
 
 
 ;; AutoComplete
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/auto-complete"))
-(setq ac-dictionary-directories ())
-(add-to-list 'ac-dictionary-directories
-						 (concat dotfiles-dir "/vendor/auto-complete/ac-dict"))
-(require 'auto-complete-config)
-(ac-config-default)
-(setq ac-auto-show-menu nil)
-(define-key ac-mode-map (kbd "M-/") 'auto-complete)
-
+;; (add-to-list 'load-path (concat dotfiles-dir "/vendor/auto-complete"))
+;; (setq ac-dictionary-directories ())
+;; (add-to-list 'ac-dictionary-directories
+;;              (concat dotfiles-dir "/vendor/auto-complete/ac-dict"))
+;; (require 'auto-complete-config)
+;; (ac-config-default)
+;; (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
+;; (ac-set-trigger-key "TAB")
+;;
 
 ;; SourcePair
 (require 'sourcepair)
 (global-set-key (kbd "s-5") 'sourcepair-load)
+
+
+;; Semantic
+(semantic-mode 1)
 
 
 ;; CEDET
