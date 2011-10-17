@@ -31,13 +31,6 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
-(defun frame-resize ()
-  (interactive)
-  (set-frame-width (selected-frame) (truncate (/ (display-pixel-width) 14.22)))
-  (set-frame-height (selected-frame) (truncate (/ (display-pixel-height) 16.32)))
-  (set-frame-position (selected-frame) (/ (display-pixel-width) 4) 0))
-;; (add-hook 'after-make-frame-functions 'frame-resize)
-
 ;; (setq make-backup-files nil)
 (setq
  backup-by-copying t ;; don't clobber symlinks
@@ -73,6 +66,7 @@
  '(erc-modules (quote (autoaway autojoin button completion fill irccontrols list match menu move-to-prompt netsplit networks noncommands notify readonly ring sound stamp spelling track)))
  '(fill-column 80)
  '(global-font-lock-mode t nil (font-lock))
+ '(global-semantic-highlight-func-mode t)
  '(global-semantic-idle-completions-mode t nil (semantic/idle))
  '(inhibit-startup-screen t)
  '(initial-buffer-choice t)
@@ -83,6 +77,8 @@
  '(mouse-wheel-mode t nil (mwheel))
  '(save-place t nil (saveplace))
  '(scroll-bar-mode nil)
+ '(semantic-decoration-styles (quote (("semantic-decoration-on-includes") ("semantic-decoration-on-protected-members" . t) ("semantic-decoration-on-private-members" . t) ("semantic-tag-boundary"))))
+ '(semantic-default-submodes (quote (global-semantic-highlight-func-mode global-semantic-idle-scheduler-mode global-semanticdb-minor-mode)))
  '(server-mode t)
  '(show-paren-mode t)
  '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify)))
@@ -319,8 +315,9 @@
 (global-set-key (kbd "s-5") 'sourcepair-load)
 
 
-;; Semantic
+;; Semantic Mode
 (semantic-mode 1)
+(require 'semantic/sb)
 
 
 ;; CEDET
@@ -420,22 +417,30 @@
           1 font-lock-warning-face t))))
 (add-hook 'coding-hook 'add-watchwords)
 
-(auto-compression-mode t)
-(add-hook 'text-mode-hook 'turn-on-flyspell)
-
-(setq system-specific-config (concat dotfiles-dir system-name ".el")
-      user-specific-config (concat dotfiles-dir user-login-name ".el")
-      system-type-specific-config (concat dotfiles-dir (prin1-to-string system-type) ".el"))
-
-(if (file-exists-p system-specific-config) (load system-specific-config))
-(if (file-exists-p user-specific-config) (load user-specific-config))
-(if (file-exists-p system-type-specific-config) (load system-type-specific-config))
+(defun frame-resize ()
+  (interactive)
+  (set-frame-width (selected-frame) (truncate (/ (display-pixel-width) 14.22)))
+  (set-frame-height (selected-frame) (truncate (/ (display-pixel-height) 16.32)))
+  (set-frame-position (selected-frame) (/ (display-pixel-width) 4) 0))
 
 (defun kill-current-line ()
   "Kill the current line, no matter where the cursor is."
   (interactive)
   (textmate-select-line) (kill-region (region-beginning) (region-end)))
 (global-set-key [(control shift k)] 'kill-current-line)
+
+;; Flyspell
+;; (auto-compression-mode t)
+;; (add-hook 'text-mode-hook 'turn-on-flyspell)
+
+
+;; System and User Configurations
+(setq system-specific-config (concat dotfiles-dir system-name ".el")
+      user-specific-config (concat dotfiles-dir user-login-name ".el")
+      system-type-specific-config (concat dotfiles-dir (prin1-to-string system-type) ".el"))
+(if (file-exists-p system-specific-config) (load system-specific-config))
+(if (file-exists-p user-specific-config) (load user-specific-config))
+(if (file-exists-p system-type-specific-config) (load system-type-specific-config))
 
 
 ;; GO Game
