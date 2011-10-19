@@ -313,46 +313,6 @@
       sr-speedbar-width-console 50
       sr-speedbar-width-x 50)
 
-;; CEDET
-;; (setq byte-compile-warnings nil)
-;; (load-file (concat dotfiles-dir "/cedet/common/cedet.elc"))
-;; (semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion
-;; (global-ede-mode t)                      ; Enable the Project management system
-;; (global-srecode-minor-mode 1)            ; Enable template insertion menu
-;; (require 'semantic-ia)
-;; (require 'semantic-gcc)
-;; (require 'semanticdb)
-;; (global-semanticdb-minor-mode 1)
-;; (require 'eassist)
-
-;; (defun my-cedet-hook ()
-;;  (local-set-key [(meta return)] 'semantic-ia-complete-symbol-menu)
-;;  (local-set-key "\C-c?" 'semantic-ia-complete-symbol-menu)
-;;     (local-set-key "\C-c>" 'semantic-complete-analyze-inline)
-;;     (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle)
-;;     ;; (local-set-key "." 'semantic-complete-self-insert)
-;;     ;; (local-set-key ">" 'semantic-complete-self-insert)
-;;  (local-set-key "\C-ch" 'eassist-switch-h-cpp)
-;;  (local-set-key "\C-cl" 'eassist-list-methods)
-;;  (local-set-key "\C-c\C-r" 'semantic-symref)
-;;  )
-;; (add-hook 'c-mode-common-hook 'my-cedet-hook)
-
-;; ECB
-;; (setq stack-trace-on-error t)
-;; (load-file (concat dotfiles-dir "/ecb/ecb.elc"))
-;; (require 'ecb)
-;; (setq ecb-directories-update-speedbar t)
-;; (setq ecb-eshell-auto-activate t)
-;; (setq ecb-eshell-enlarge-when-eshell t)
-;; (setq ecb-layout-name "left3")
-;; (setq ecb-primary-secondary-mouse-buttons (quote mouse-1--mouse-2))
-;; (setq ecb-tip-of-the-day nil)
-;; (setq ecb-tree-buffer-style (quote image))
-;; (setq ecb-type-tag-expansion (quote ((default "class" "interface" "group" "namespace") (c-mode . all-specifiers))))
-;; (setq ecb-vc-enable-support t)
-;; (setq ecb-windows-width 0.2)
-
 
 ;; Auto Insert Header
 ;; (require 'autoinsert)
