@@ -22,11 +22,12 @@
 (setq dotfiles-dir (file-name-directory (or (buffer-file-name) load-file-name)))
 (setq ns-pop-up-frames nil)
 (setq auto-save-default nil)
-(setq-default tab-width 2)
 (setq TeX-PDF-mode t)
 (setq indent-tabs-mode nil)
-;; (setq ns-command-modifier 'meta) ;; Change Meta key for Command
-;; (windmove-default-keybindings 'meta) ;;Change Keys for Switching Windows
+(setq-default tab-width 2)
+
+;; (setq ns-command-modifier 'meta) 
+(windmove-default-keybindings 'control)
 ;; (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
@@ -42,12 +43,11 @@
  version-control t) ;; use versioned backups
 
 (fset 'yes-or-no-p 'y-or-n-p)
-(delete-selection-mode t)
-(blink-cursor-mode t)
-(show-paren-mode t)
-(column-number-mode t)
 (set-fringe-style -1)
 (tooltip-mode -1)
+(setq ispell-local-dictionary "pt_BR")
+(setq ispell-program-name "/usr/local/bin/aspell")
+(setq inhibit-startup-screen t)
 
 
 ;; Set Encondig UTF-8
@@ -60,30 +60,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(column-number-mode t)
- '(doc-view-continuous t)
- '(ecb-options-version "2.40")
- '(erc-modules (quote (autoaway autojoin button completion fill irccontrols list match menu move-to-prompt netsplit networks noncommands notify readonly ring sound stamp spelling track)))
- '(fill-column 80)
- '(global-font-lock-mode t nil (font-lock))
- '(global-semantic-highlight-func-mode t)
- '(global-semantic-idle-completions-mode t nil (semantic/idle))
- '(inhibit-startup-screen t)
- '(initial-buffer-choice t)
- '(ispell-local-dictionary "pt_BR")
- '(ispell-program-name "/usr/local/bin/aspell" t)
- '(iswitchb-mode t nil (iswitchb))
- '(mouse-avoidance-mode (quote animate) nil (avoid))
  '(mouse-wheel-mode t nil (mwheel))
+ '(global-font-lock-mode t nil (font-lock))
+ '(desktop-enable t nil (desktop))
  '(save-place t nil (saveplace))
- '(scroll-bar-mode nil)
- '(semantic-decoration-styles (quote (("semantic-decoration-on-includes") ("semantic-decoration-on-protected-members" . t) ("semantic-decoration-on-private-members" . t) ("semantic-tag-boundary"))))
- '(semantic-default-submodes (quote (global-semantic-highlight-func-mode global-semantic-idle-scheduler-mode global-semanticdb-minor-mode)))
- '(server-mode t)
- '(show-paren-mode t)
- '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify)))
- '(tool-bar-mode nil)
- '(version-control t))
+ )
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -94,8 +75,6 @@
 
 ;; LoadPath
 (add-to-list 'load-path dotfiles-dir)
-;; (add-to-list 'load-path (concat dotfiles-dir "/ecb"))
-(add-to-list 'load-path (concat dotfiles-dir "/twittering-mode"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme/themes"))
@@ -103,8 +82,7 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/auctex"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/auctex/preview"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/nxhtml"))
-
-(add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/twittering-mode"))
 
 
 ;; IBuffer
@@ -153,12 +131,23 @@
 (require 'whitespace)
 
 
+;; Edit Mode
+(setq column-number-mode t
+      fill-column 80
+      show-paren-mode t
+      delete-selection-mode t
+      blink-cursor-mode t
+      doc-view-continuous t)
+
+(add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
+
+
 ;; Eshell
 (require 'ansi-color)
 (require 'eshell)
 (defun eshell-handle-ansi-color ()
   (ansi-color-apply-on-region eshell-last-output-start
-			      eshell-last-output-end))
+    eshell-last-output-end))
 (add-to-list 'eshell-output-filter-functions 'eshell-handle-ansi-color)
 
 
@@ -281,7 +270,7 @@
   "Return a prompt with VC branch and dirty state."
   (let ((branch (eshell/branch)))
     (propertize (concat (eshell/pwd)
-												(and branch (concat " (" (concat branch ") ")))
+                        (and branch (concat " (" (concat branch ") ")))
                         (cond ((= (user-uid) 0) "# ")
                               ((and branch (eshell/vc-dirty)) eshell-vc-dirty)
                               (t "$ ")))
@@ -299,17 +288,6 @@
       eshell-skip-prompt-function #'eshell-vc-skip-prompt)
 
 
-;; AutoComplete
-;; (add-to-list 'load-path (concat dotfiles-dir "/vendor/auto-complete"))
-;; (setq ac-dictionary-directories ())
-;; (add-to-list 'ac-dictionary-directories
-;;              (concat dotfiles-dir "/vendor/auto-complete/ac-dict"))
-;; (require 'auto-complete-config)
-;; (ac-config-default)
-;; (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
-;; (ac-set-trigger-key "TAB")
-;;
-
 ;; SourcePair
 (require 'sourcepair)
 (global-set-key (kbd "s-5") 'sourcepair-load)
@@ -318,7 +296,22 @@
 ;; Semantic Mode
 (semantic-mode 1)
 (require 'semantic/sb)
+(global-semantic-decoration-mode 1)
+(global-semantic-highlight-func-mode 1)
+(setq semantic-decoration-styles
+  (quote (("semantic-decoration-on-includes")
+          ("semantic-decoration-on-protected-members" . t)
+          ("semantic-decoration-on-private-members" . t)
+          ("semantic-tag-boundary"))))
 
+;; SR-SpeedBar
+(require 'sr-speedbar)
+(global-set-key [(meta s)] 'sr-speedbar-toggle)
+(setq speedbar-use-images nil
+      sr-speedbar-max-width 100
+      sr-speedbar-right-side nil
+      sr-speedbar-width-console 50
+      sr-speedbar-width-x 50)
 
 ;; CEDET
 ;; (setq byte-compile-warnings nil)
@@ -344,9 +337,6 @@
 ;;  (local-set-key "\C-c\C-r" 'semantic-symref)
 ;;  )
 ;; (add-hook 'c-mode-common-hook 'my-cedet-hook)
-
-;; (require 'sr-speedbar)
-;; (global-set-key [(meta s)] 'sr-speedbar-toggle)
 
 ;; ECB
 ;; (setq stack-trace-on-error t)
@@ -394,6 +384,11 @@
 (setq erc-kill-server-buffer-on-quit t)
 
 
+;; Flyspell
+(auto-compression-mode t)
+(add-hook 'text-mode-hook 'turn-on-flyspell)
+
+
 ;; OTHERS
 (defun lorem ()
   "Insert a lorem ipsum."
@@ -429,10 +424,6 @@
   (textmate-select-line) (kill-region (region-beginning) (region-end)))
 (global-set-key [(control shift k)] 'kill-current-line)
 
-;; Flyspell
-;; (auto-compression-mode t)
-;; (add-hook 'text-mode-hook 'turn-on-flyspell)
-
 
 ;; System and User Configurations
 (setq system-specific-config (concat dotfiles-dir system-name ".el")
@@ -454,15 +445,15 @@
 
 ;; EMMS
 (require 'emms-setup)
-(emms-devel)
-;; (emms-standard)
+(require 'emms-mode-line)
+(require 'emms-playing-time)
+(require 'emms-lyrics)
+;; (emms-devel)
+(emms-standard)
 (emms-default-players)
 (setq emms-playlist-buffer-name "*Musics*")
-(require 'emms-mode-line)
 (emms-mode-line 1)
-(require 'emms-playing-time)
 (emms-playing-time 1)
-(require 'emms-lyrics)
 (emms-lyrics 1)
 (require 'xwl-emms)
 

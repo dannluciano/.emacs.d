@@ -8,7 +8,7 @@
 (require 'peepopen)
 (textmate-mode)
 (setq ns-pop-up-frames nil
-			emms-source-file-default-directory "~/Music/iTunes/iTunes Media/Music/")
+  emms-source-file-default-directory "~/Music/iTunes/iTunes Media/Music/")
 (define-key *textmate-mode-map* [(super t)] 'peepopen-goto-file-gui)
 
 
