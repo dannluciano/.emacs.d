@@ -20,14 +20,12 @@
 (setq visible-bell 1)
 (setq ring-bell-function 'ignore)
 (setq dotfiles-dir (file-name-directory (or (buffer-file-name) load-file-name)))
-(setq ns-pop-up-frames nil)
 (setq auto-save-default nil)
 (setq TeX-PDF-mode t)
 (setq indent-tabs-mode nil)
 (setq-default tab-width 2)
 
-;; (setq ns-command-modifier 'meta) 
-(windmove-default-keybindings 'control)
+;; (setq ns-command-modifier 'meta)
 ;; (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
@@ -48,6 +46,7 @@
 (setq ispell-local-dictionary "pt_BR")
 (setq ispell-program-name "/usr/local/bin/aspell")
 (setq inhibit-startup-screen t)
+(setq focus-follows-mouse t)
 
 
 ;; Set Encondig UTF-8
@@ -60,11 +59,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(mouse-wheel-mode t nil (mwheel))
- '(global-font-lock-mode t nil (font-lock))
  '(desktop-enable t nil (desktop))
+ '(erc-modules (quote (autojoin button completion fill irccontrols list match menu move-to-prompt netsplit networks noncommands readonly ring smiley sound stamp spelling track)))
+ '(global-font-lock-mode t nil (font-lock))
  '(save-place t nil (saveplace))
- )
+ '(speedbar-after-create-hook (quote (speedbar-frame-reposition-smartly speedbar-frame-resize)))
+ '(speedbar-use-images nil))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -304,15 +304,6 @@
           ("semantic-decoration-on-private-members" . t)
           ("semantic-tag-boundary"))))
 
-;; SR-SpeedBar
-(require 'sr-speedbar)
-(global-set-key [(meta s)] 'sr-speedbar-toggle)
-(setq speedbar-use-images nil
-      sr-speedbar-max-width 100
-      sr-speedbar-right-side nil
-      sr-speedbar-width-console 50
-      sr-speedbar-width-x 50)
-
 
 ;; Auto Insert Header
 ;; (require 'autoinsert)
@@ -349,6 +340,45 @@
 (add-hook 'text-mode-hook 'turn-on-flyspell)
 
 
+;; View Mode
+(global-unset-key [(meta o)])
+(global-set-key [(meta o)] 'other-frame)
+(global-set-key [(meta s)] 'speedbar)
+
+
+;; GO Game
+(autoload 'gnugo "gnugo" "Play Go" t)
+
+
+;; HTMLIZE
+(autoload 'htmlize "htmlize" "HTMLize" t)
+
+
+;; NxHtml
+(autoload 'autostart "nxhtml" "NXHTML" t)
+
+
+;; EMMS
+(require 'emms-setup)
+(require 'emms-mode-line)
+(require 'emms-playing-time)
+(require 'emms-lyrics)
+;; (emms-devel)
+(emms-standard)
+(emms-default-players)
+(setq emms-playlist-buffer-name "*Musics*")
+(emms-mode-line 1)
+(emms-playing-time 1)
+(emms-lyrics 1)
+(require 'xwl-emms)
+
+
+;; Twittering
+(require 'twittering-mode)
+(setq twittering-icon-mode t)
+(add-hook 'twittering-edit-mode-hook (lambda () (ispell-minor-mode) (flyspell-mode)))
+
+
 ;; OTHERS
 (defun lorem ()
   "Insert a lorem ipsum."
@@ -374,9 +404,16 @@
 
 (defun frame-resize ()
   (interactive)
-  (set-frame-width (selected-frame) (truncate (/ (display-pixel-width) 14.22)))
-  (set-frame-height (selected-frame) (truncate (/ (display-pixel-height) 16.32)))
-  (set-frame-position (selected-frame) (/ (display-pixel-width) 4) 0))
+	(set-frame-position (selected-frame) (/ (display-pixel-width) 4) 0)
+  (set-frame-width (selected-frame) (truncate (* (/ (display-pixel-width) 4) (/ 3 7.11))))
+  (set-frame-height (selected-frame) (truncate (/ (display-pixel-height) 16.32))))
+
+(defun speedbar-frame-resize ()
+  (interactive)
+	(set-frame-position (selected-frame) 0 0)
+  (set-frame-width (selected-frame) (truncate (/ (/ (display-pixel-width) 4) 7.44)))
+  (set-frame-height (selected-frame) (truncate (/ (display-pixel-height) 16.32))))
+
 
 (defun kill-current-line ()
   "Kill the current line, no matter where the cursor is."
@@ -392,35 +429,6 @@
 (if (file-exists-p system-specific-config) (load system-specific-config))
 (if (file-exists-p user-specific-config) (load user-specific-config))
 (if (file-exists-p system-type-specific-config) (load system-type-specific-config))
-
-
-;; GO Game
-(autoload 'gnugo "gnugo" "Play Go" t)
-
-;; HTMLIZE
-(autoload 'htmlize "htmlize" "HTMLize" t)
-
-;; NxHtml
-(autoload 'autostart "nxhtml" "NXHTML" t)
-
-;; EMMS
-(require 'emms-setup)
-(require 'emms-mode-line)
-(require 'emms-playing-time)
-(require 'emms-lyrics)
-;; (emms-devel)
-(emms-standard)
-(emms-default-players)
-(setq emms-playlist-buffer-name "*Musics*")
-(emms-mode-line 1)
-(emms-playing-time 1)
-(emms-lyrics 1)
-(require 'xwl-emms)
-
-;; Twittering
-(require 'twittering-mode)
-(setq twittering-icon-mode t)
-(add-hook 'twittering-edit-mode-hook (lambda () (ispell-minor-mode) (flyspell-mode)))
 
 ;; Benchmarking
 (message "My .emacs loaded in %ds"
