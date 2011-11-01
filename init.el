@@ -24,13 +24,10 @@
 (setq TeX-PDF-mode t)
 (setq indent-tabs-mode nil)
 (setq-default tab-width 2)
-
+(setq ispell-local-dictionary "pt_BR")
+(setq ispell-program-name "/usr/local/bin/aspell")
+(setq inhibit-startup-screen t)
 ;; (setq ns-command-modifier 'meta)
-;; (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-
-;; (setq make-backup-files nil)
 (setq
  backup-by-copying t ;; don't clobber symlinks
  backup-directory-alist ;; don't litter
@@ -39,14 +36,12 @@
  kept-new-versions 6
  kept-old-versions 2
  version-control t) ;; use versioned backups
-
 (fset 'yes-or-no-p 'y-or-n-p)
 (set-fringe-style -1)
 (tooltip-mode -1)
-(setq ispell-local-dictionary "pt_BR")
-(setq ispell-program-name "/usr/local/bin/aspell")
-(setq inhibit-startup-screen t)
-(setq focus-follows-mouse t)
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+;; (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
 
 ;; Set Encondig UTF-8
@@ -60,7 +55,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(desktop-enable t nil (desktop))
- '(erc-modules (quote (autojoin button completion fill irccontrols list match menu move-to-prompt netsplit networks noncommands readonly ring smiley sound stamp spelling track)))
  '(global-font-lock-mode t nil (font-lock))
  '(save-place t nil (saveplace))
  '(speedbar-after-create-hook (quote (speedbar-frame-reposition-smartly speedbar-frame-resize)))
@@ -321,6 +315,7 @@
 
 
 ;; ERC
+(setq erc-modules (quote (autojoin button completion fill irccontrols list match menu move-to-prompt netsplit networks noncommands readonly ring smiley sound stamp spelling track)))
 (setq erc-server "irc.freenode.net"
   erc-port 6667
   erc-nick "dannluciano"
