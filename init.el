@@ -400,7 +400,7 @@
 (defun speedbar-frame-resize ()
   (interactive)
 	(set-frame-position (selected-frame) 0 0)
-  (set-frame-width (selected-frame) (truncate (/ (/ (display-pixel-width) 4) 7.44)))
+  (set-frame-width (selected-frame) (truncate (/ (/ (display-pixel-width) 4) 7.36)))
   (set-frame-height (selected-frame) (truncate (/ (display-pixel-height) 16.32))))
 
 
