@@ -5,5 +5,5 @@
 	path = ecb
 	url = https://github.com/emacsmirror/ecb.git
 [submodule "twittering-mode"]
-	path = twittering-mode
+	path = vendor/twittering-mode
 	url = https://github.com/hayamiz/twittering-mode.git
