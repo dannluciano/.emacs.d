@@ -308,12 +308,6 @@
 ;; (define-auto-insert "\.php" "my-php-template.php")
 
 
-;; LISP
-(defun my-lisp-hook ()
-  (require 'quack))
-(add-hook 'lisp-mode 'my-lisp-hook)
-
-
 ;; ERC
 (setq erc-modules (quote (autojoin button completion fill irccontrols list match menu move-to-prompt netsplit networks noncommands readonly ring smiley sound stamp spelling track)))
 (setq erc-server "irc.freenode.net"
@@ -424,6 +418,10 @@
 (if (file-exists-p system-specific-config) (load system-specific-config))
 (if (file-exists-p user-specific-config) (load user-specific-config))
 (if (file-exists-p system-type-specific-config) (load system-type-specific-config))
+
+(frame-resize)
+(speedbar)
+
 
 ;; Benchmarking
 (message "My .emacs loaded in %ds"

@@ -26,9 +26,11 @@
 (global-set-key (kbd "<s-left>") 'beginning-of-line-text)
 (global-set-key (kbd "<M-left>") 'backward-word)
 (global-set-key (kbd "<M-right>") 'forward-word)
+(global-set-key (kbd "<M-up>") 'backward-paragraph)
+(global-set-key (kbd "<M-down>") 'forward-paragraph)
 (global-set-key (kbd "<M-s-right>") 'next-buffer)
 (global-set-key (kbd "<M-s-left>") 'previous-buffer)
 (global-set-key (kbd "<s-return>") 'ns-toggle-fullscreen)
 
 ;; (run-with-idle-timer 0.1 nil 'ns-toggle-fullscreen)
-(run-with-idle-timer 0.1 nil 'frame-resize)
+;; (run-with-idle-timer 0.1 nil 'frame-resize)
