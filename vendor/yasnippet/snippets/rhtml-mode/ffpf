@@ -1,3 +1,0 @@
-#name: f.password_field
-# --
-<%= f.password_field ${1:attribute} %>

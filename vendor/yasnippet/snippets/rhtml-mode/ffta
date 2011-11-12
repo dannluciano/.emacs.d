@@ -1,3 +1,0 @@
-#name: f.text_area
-# --
-<%= f.text_area :${1:attribute} %>

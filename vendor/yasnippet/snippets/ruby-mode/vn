@@ -1,4 +1,0 @@
-#name: validates_numericality
-# --
-validates_numericality_of :${1:price}, :${2:only_integer} => ${3:true}
-

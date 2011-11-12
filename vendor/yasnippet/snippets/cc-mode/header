@@ -1,7 +1,0 @@
-#name: header
-# --
-/*
- *   Copyright (C) `(format-time-string "%Y" (current-time))` by `user-full-name`
- *   <`user-mail-address`>
- *   Modified: <>
- */

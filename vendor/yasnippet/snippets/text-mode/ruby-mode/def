@@ -1,6 +1,0 @@
-#name : def method(args) end
-#group : definitions
-# --
-def ${method}(${args})
-  $0
-end

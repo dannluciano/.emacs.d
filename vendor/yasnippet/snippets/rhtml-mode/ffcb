@@ -1,3 +1,0 @@
-#name: f.check_box
-# --
-<%= f.check_box :${1:attribute} %>

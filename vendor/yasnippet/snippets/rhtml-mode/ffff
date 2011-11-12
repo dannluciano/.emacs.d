@@ -1,3 +1,0 @@
-#name: f.file_field
-# --
-<%= f.file_field :${1:attribute} %>

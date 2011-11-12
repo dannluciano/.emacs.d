@@ -1,8 +1,0 @@
-#name : ifndef XX; define XX; endif /* XX */
-# --
-#ifndef ${1:foo}
-#define $1
-
-$0
-
-#endif /* $1 */

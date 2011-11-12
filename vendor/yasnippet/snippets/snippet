@@ -1,6 +1,0 @@
-#name: snippet_template
-# --
-#name: ${1:snippet_name}
-# --
-$0
-

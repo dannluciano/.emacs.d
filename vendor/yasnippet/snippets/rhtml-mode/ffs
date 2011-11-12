@@ -1,3 +1,0 @@
-#name: f.submit
-# --
-<%= f.submit '${1:Submit}' %>

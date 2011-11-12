@@ -1,3 +1,0 @@
-#name: simple copyright
-# --
-# Copyright (C) `(format-time-string "%Y" (current-time))` by `user-full-name` <`user-mail-address`>

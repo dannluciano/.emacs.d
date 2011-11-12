@@ -1,3 +1,0 @@
-#name: puts ("string");
-# --
-puts ("${1:string}");

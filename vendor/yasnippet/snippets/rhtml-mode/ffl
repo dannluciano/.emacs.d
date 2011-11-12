@@ -1,3 +1,0 @@
-#name: f.label
-# --
-<%= f.label :${1:attribute}, '$1' %>

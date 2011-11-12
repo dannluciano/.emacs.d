@@ -1,3 +1,0 @@
-# System.out.println(parameter)
-# --
-System.out.println ( ${1:out} );$0

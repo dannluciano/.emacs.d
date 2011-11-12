@@ -1,1 +1,0 @@
-<html><body>You are being <a href="https://raw.github.com/mustache/emacs/master/mustache-mode.el">redirected</a>.</body></html>
