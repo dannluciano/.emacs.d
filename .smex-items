@@ -1,0 +1,32 @@
+
+;; ----- smex-history -----
+(
+ comment-region
+ package-install
+ whitespace-mode
+ eshell
+ fill-region
+ ido-enter-switch-buffer
+ make-directory
+)
+
+;; ----- smex-data -----
+(
+ (package-list-packages . 2)
+ (color-theme-select . 2)
+ (customize-themes . 1)
+ (maximize-window . 2)
+ (magit-status . 1)
+ (speedbar . 1)
+ (list-packages . 1)
+ (indent-new-comment-line . 1)
+ (comment-box . 1)
+ (package-install . 3)
+ (make-directory . 1)
+ (frame-resize . 1)
+ (fill-region . 6)
+ (ido-enter-switch-buffer . 1)
+ (eshell . 1)
+ (whitespace-mode . 1)
+ (comment-region . 1)
+)

@@ -1,0 +1,13 @@
+;; ;; EMMS
+;; (require 'emms-setup)
+;; (require 'emms-mode-line)
+;; (require 'emms-playing-time)
+;; (require 'emms-lyrics)
+;; ;; (emms-devel)
+;; (emms-standard)
+;; (emms-default-players)
+;; (setq emms-playlist-buffer-name "*Musics*")
+;; (emms-mode-line 1)
+;; (emms-playing-time 1)
+;; (emms-lyrics 1)
+;; (require 'xwl-emms)
