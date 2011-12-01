@@ -5,5 +5,6 @@
       doc-view-continuous t
       indent-tabs-mode nil)
 
+(cua-mode t)
 
 (add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))

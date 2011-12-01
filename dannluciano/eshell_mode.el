@@ -1,7 +1,8 @@
 ;; Eshell
-(require 'ansi-color)
-(require 'eshell)
-(defun eshell-handle-ansi-color ()
-  (ansi-color-apply-on-region eshell-last-output-start
-    eshell-last-output-end))
-(add-to-list 'eshell-output-filter-functions 'eshell-handle-ansi-color)
+;; (setq eshell-prompt-function
+;;       (lambda ()
+;;         (concat "[" (eshell/pwd) "]"
+;;                 (if (= (user-uid) 0) "# " "$ "))))
+
+(setq eshell-prompt-regexp "^[^#$\n]*[#$] ")
+(setq eshell-cmpl-cycle-completions nil)

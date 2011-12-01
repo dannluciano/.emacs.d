@@ -1,5 +1,4 @@
 ;; Darwin
-
 ;; (set-frame-font "Menlo-12")
 
 
@@ -7,9 +6,10 @@
 (require 'textmate)
 (require 'peepopen)
 (textmate-mode)
+(define-key *textmate-mode-map* [(super t)] 'peepopen-goto-file-gui)
+
 (setq ns-pop-up-frames nil
   emms-source-file-default-directory "~/Music/iTunes/iTunes Media/Music/")
-(define-key *textmate-mode-map* [(super t)] 'peepopen-goto-file-gui)
 
 
 ;; Mac-friendley keys map
@@ -31,6 +31,3 @@
 (global-set-key (kbd "<M-s-right>") 'next-buffer)
 (global-set-key (kbd "<M-s-left>") 'previous-buffer)
 (global-set-key (kbd "<s-return>") 'ns-toggle-fullscreen)
-
-;; (run-with-idle-timer 0.1 nil 'ns-toggle-fullscreen)
-;; (run-with-idle-timer 0.1 nil 'frame-resize)
