@@ -1,32 +1,32 @@
 
 ;; ----- smex-history -----
 (
- emms-play-directory
- load-theme
- speedbar-frame-mode
+ emacs-lisp-byte-compile-and-load
+ rvm-use
+ list-packages
+ package-refresh-contents
+ browse-url
+ url-view-url
  speedbar
- flyspell-buffer
- eval-region
- eshell
 )
 
 ;; ----- smex-data -----
 (
- (package-list-packages . 10)
+ (package-list-packages . 11)
  (color-theme-select . 14)
  (customize-themes . 1)
  (maximize-window . 2)
  (magit-status . 2)
- (speedbar . 4)
- (list-packages . 3)
+ (speedbar . 38)
+ (list-packages . 7)
  (indent-new-comment-line . 1)
  (comment-box . 1)
- (package-install . 6)
+ (package-install . 9)
  (make-directory . 1)
  (frame-resize . 3)
  (fill-region . 6)
  (ido-enter-switch-buffer . 1)
- (eshell . 23)
+ (eshell . 28)
  (whitespace-mode . 1)
  (comment-region . 2)
  (server-start . 1)
@@ -37,7 +37,7 @@
  (cua-mode . 1)
  (color-theme-ir-black . 7)
  (ibuffer . 4)
- (eval-region . 27)
+ (eval-region . 30)
  (dired . 2)
  (recompile-init . 4)
  (enable-theme . 6)
@@ -51,7 +51,7 @@
  (color-theme-twilight . 2)
  (semanticdb-cleanup-cache-files . 3)
  (semanticdb-save-all-db . 1)
- (customize-face . 6)
+ (customize-face . 7)
  (irc . 1)
  (semantic-ia-complete-symbol . 3)
  (c-indent-line-or-region . 1)
@@ -67,8 +67,8 @@
  (color-theme-railscasts . 1)
  (semantic-decoration-mode . 1)
  (text-mode . 1)
- (lisp-mode . 1)
- (load-file . 1)
+ (lisp-mode . 2)
+ (load-file . 2)
  (idle-highlight-mode . 2)
  (set-face-font . 2)
  (menu-set-font . 1)
@@ -87,11 +87,28 @@
  (inferior-ess . 1)
  (gnus . 1)
  (rmail . 1)
- (customize-group . 2)
+ (customize-group . 10)
  (flyspell-mode . 4)
  (flyspell-buffer . 1)
- (speedbar-frame-mode . 2)
+ (speedbar-frame-mode . 3)
  (speedbar-frame-resize . 1)
  (load-theme . 1)
  (emms-play-directory . 1)
+ (setup-frames . 2)
+ (other-frame . 3)
+ (eval-expression . 5)
+ (org-mode . 1)
+ (package-refresh-contents . 4)
+ (ecb-activate . 7)
+ (ecb-minor-mode . 7)
+ (ecb-customize . 1)
+ (ecb-minor-menu . 1)
+ (emacs-version . 1)
+ (compile . 1)
+ (sr-speedbar-open . 2)
+ (select-frame-by-name . 3)
+ (url-view-url . 3)
+ (browse-url . 1)
+ (rvm-use . 1)
+ (emacs-lisp-byte-compile-and-load . 1)
 )

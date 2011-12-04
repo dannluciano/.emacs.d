@@ -94,9 +94,16 @@
  ;; If there is more than one, they won't work right.
  '(desktop-enable t nil (desktop))
  '(desktop-save-mode t nil (desktop))
+ '(ecb-layout-name "left3")
+ '(ecb-options-version "2.40")
+ '(ecb-tip-of-the-day nil)
+ '(ecb-use-speedbar-instead-native-tree-buffer (quote dir))
+ '(ecb-windows-width 0.2)
  '(global-font-lock-mode t nil (font-lock))
  '(save-place t nil (saveplace))
- '(speedbar-use-images nil))
+ '(speedbar-after-create-hook (quote (speedbar-frame-resize)))
+ '(speedbar-use-images nil)
+ )
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

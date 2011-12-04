@@ -3,8 +3,8 @@
 ;;; Code:
 
 
-;;;### (autoloads (yas/jit-compile-dir) "yas-jit" "yas-jit.el" (20157
-;;;;;;  65352))
+;;;### (autoloads (yas/jit-compile-dir) "yas-jit" "yas-jit.el" (20187
+;;;;;;  3206))
 ;;; Generated autoloads from yas-jit.el
 
 (autoload 'yas/jit-compile-dir "yas-jit" "\
@@ -14,7 +14,7 @@ Compiles directory into a \"bundle\".  Useful for caching purposes.
 
 ;;;***
 
-;;;### (autoloads nil nil ("yas-jit-pkg.el") (20157 65352 751758))
+;;;### (autoloads nil nil ("yas-jit-pkg.el") (20187 3206 149700))
 
 ;;;***
 
