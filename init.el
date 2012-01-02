@@ -47,39 +47,67 @@
   (if (fboundp 'menu-bar-mode) (menu-bar-mode 0)))
 
 
-
 ;; You can keep system- or user-specific customizations here
-(setq system-type-specific-config (concat dotfiles-dir (prin1-to-string system-type) ".el"))
-(if (file-exists-p system-type-specific-config) (load system-type-specific-config))
+(setq system-type-specific-config
+      (concat dotfiles-dir (prin1-to-string system-type) ".el"))
+(if (file-exists-p system-type-specific-config)
+    (load system-type-specific-config))
 
 
 ;; Color Theme
 (require 'color-theme)
-;; (require 'color-theme-actress)
-;; (require 'color-theme-blackboard)
-;; (require 'color-theme-complexity)
-;; (require 'color-theme-dpaste)
-;; (require 'color-theme-eclipse)
-;; (require 'color-theme-github)
-;; (require 'color-theme-ir-black)
-;; (require 'color-theme-railscasts)
 (require 'color-theme-solarized)
-;; (require 'color-theme-tango)
-;; (require 'color-theme-tangotango)
-;; (require 'color-theme-wombat)
-;; (require 'color-theme-zenburn)
-;; (color-theme-blackboard)
 
 (if window-system
     (color-theme-solarized-dark)
   (load-theme 'wombat))
 
 
-(global-hl-line-mode -1)
-(hl-line-mode -1)
+;; Speedbar
+(load-file (concat dotfiles-dir "/elpa/sr-speedbar-0.1.8/sr-speedbar.elc"))
+(setq speedbar-use-images nil
+      sr-speedbar-right-side nil)
+(global-set-key [(control tab)] 'sr-speedbar-toggle)
+
 (setq visible-bell 1)
 (setq ring-bell-function 'ignore)
+
+(setq pop-up-windows nil)
+(setq split-height-threshold nil)
+(setq split-width-threshold nil)
+
+(global-hl-line-mode -1)
+(hl-line-mode -1)
+(whitespace-mode t)
+(eshell)
+(sr-speedbar-toggle)
+(other-window 1)
 (server-start)
+
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
+ '(current-language-environment "UTF-8")
+ '(custom-safe-themes (quote ("d14db41612953d22506af16ef7a23c4d112150e5" default)))
+ '(desktop-save-mode t nil (desktop))
+ '(display-battery-mode t)
+ '(global-font-lock-mode t nil (font-lock))
+ '(save-place t nil (saveplace))
+ '(scroll-bar-mode nil)
+ '(show-paren-mode t)
+ '(size-indication-mode t)
+ '(speedbar-show-unknown-files t)
+ '(tool-bar-mode nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(hl-line ((t (:inherit fdf6e3)))))
 
 
 ;; Benchmarking
@@ -87,26 +115,3 @@
          (destructuring-bind (hi lo ms) (current-time)
            (- (+ hi lo) (+ (first *emacs-load-start*) (second
                                                        *emacs-load-start*)))))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(desktop-enable t nil (desktop))
- '(desktop-save-mode t nil (desktop))
- '(ecb-layout-name "left3")
- '(ecb-options-version "2.40")
- '(ecb-tip-of-the-day nil)
- '(ecb-use-speedbar-instead-native-tree-buffer (quote dir))
- '(ecb-windows-width 0.2)
- '(global-font-lock-mode t nil (font-lock))
- '(save-place t nil (saveplace))
- '(speedbar-after-create-hook (quote (speedbar-frame-resize)))
- '(speedbar-use-images nil)
- )
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(hl-line ((t (:inherit fdf6e3)))))

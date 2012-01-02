@@ -17,12 +17,12 @@
 ;; modify it under the terms of the GNU General Public License as
 ;; published by the Free Software Foundation; either version 2 of
 ;; the License, or (at your option) any later version.
-;; 
+;;
 ;; This program is distributed in the hope that it will be useful,
 ;; but WITHOUT ANY WARRANTY; without even the implied warranty of
 ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 ;; GNU General Public License for more details.
-;; 
+;;
 ;; You should have received a copy of the GNU General Public
 ;; License along with this program; if not, write to the Free
 ;; Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
@@ -36,10 +36,10 @@
 ;;
 ;; This Emacs lisp file provides the function "sourcepair-load" which will load
 ;; the corresponding header or source file for the current buffer.  For example,
-;; if you are looking at the file FooParser.cpp and enter M-x sourcepair-load 
-;; (or whatever keybinding you've set), the file FooParser.h will be loaded.  
-;; It also works the other way as well.  To use it put this file somewhere 
-;; in your lisp library path and then add something like this to your .emacs 
+;; if you are looking at the file FooParser.cpp and enter M-x sourcepair-load
+;; (or whatever keybinding you've set), the file FooParser.h will be loaded.
+;; It also works the other way as well.  To use it put this file somewhere
+;; in your lisp library path and then add something like this to your .emacs
 ;; file:
 ;;
 ;; (load-file "sourcepair.el")
@@ -60,27 +60,27 @@
 ;; sourcepair-source-extensions :
 ;;
 ;;    A list containing the recognized extensions for source files.  By default
-;;    this is set to ( ".cpp" ".cxx" ".cc" ".c" ).  For example: with the default 
-;;    setting if you are looking at "foo.h", the function will look for 
-;;    "foo.cpp", "foo.cxx", "foo.cc" or "foo.c" in that order in the 
+;;    this is set to ( ".cpp" ".cxx" ".cc" ".c" ).  For example: with the default
+;;    setting if you are looking at "foo.h", the function will look for
+;;    "foo.cpp", "foo.cxx", "foo.cc" or "foo.c" in that order in the
 ;;    directories specified by sourcepair-source-path.
 ;;
 ;; sourcepair-header-extensions :
 ;;
 ;;    A list containing the recognized extensions for header files.  By default
-;;    this is set to ( ".h" ".hpp" ".hh" ).  For example: with the default 
-;;    setting if you are looking at "foo.cpp", the function will look for 
+;;    this is set to ( ".h" ".hpp" ".hh" ).  For example: with the default
+;;    setting if you are looking at "foo.cpp", the function will look for
 ;;    "foo.h", "foo.hpp" or "foo.hh" in that order in the directories specified
 ;;    by sourcepair-header-path.
-;;    
+;;
 ;; sourcepair-source-path :
 ;;
 ;;    A list containing the path's to search for source files.  By default this
 ;;    is set to ( "." ) which means source files will only be searched for in
-;;    the current directory.  Paths that end in "/*" will be searched 
+;;    the current directory.  Paths that end in "/*" will be searched
 ;;    recursively.  For example, if you specified sourcepair-source-path as
-;;    ( "." "../*" ) the function will look for source files first in the 
-;;    current directory, and then in the parent directory, and then in any 
+;;    ( "." "../*" ) the function will look for source files first in the
+;;    current directory, and then in the parent directory, and then in any
 ;;    subdirectories of the parent directory.
 ;;
 ;; sourcepair-header-path :
@@ -95,10 +95,10 @@
 ;;
 ;; sourcepair-private-header-suffixes :
 ;;
-;;    A list containing suffixes that will be ignored when searching 
+;;    A list containing suffixes that will be ignored when searching
 ;;    for the corresponding source file for a given header file.  This
-;;    allows supporting "private header files".   For example, Foo.cpp 
-;;    has a public interface in "Foo.h" and a private interface in 
+;;    allows supporting "private header files".   For example, Foo.cpp
+;;    has a public interface in "Foo.h" and a private interface in
 ;;    "Foo_p.h".  By default this is set to ( "_p" "_impl" ).
 ;;
 ;; For example, in my .emacs file I have the following:
@@ -133,11 +133,11 @@ order in the directories specified by `sourcepair-header-path'."
 (defcustom sourcepair-private-header-suffixes '( "_p" "_impl" )
   "*List of recognized suffixes for 'private' header files.
 
-This variable is used by `sourcepair-load' to help support 'private header 
+This variable is used by `sourcepair-load' to help support 'private header
 files'.  The value should be a list containing recognized suffixes that will
-be ignored when searching for the corresponding source file for a given 
+be ignored when searching for the corresponding source file for a given
 header file.  For example, Foo.cpp is an implementation of what is in
-Foo_p.h.  If you set this variable to include (\"_p\") and you are looking 
+Foo_p.h.  If you set this variable to include (\"_p\") and you are looking
 at \"Foo_p.h\" or \"Foo.h\", `sourcepair-load' will load the file \"Foo.cpp\".
 
 "
@@ -175,8 +175,8 @@ this is set to ( \"CVS\" )"
 (defun sourcepair-header-file-p (filename)
   "Return t if argument is a C/C++ header file, nil otherwise
 
-This function returns t if the filename specified is a C/C++ header 
-file, or nil otherwise.  Header files are identified by extension via 
+This function returns t if the filename specified is a C/C++ header
+file, or nil otherwise.  Header files are identified by extension via
 the variable `sourcepair-header-extensions'."
 
   (let* ((extension (concat (member ?. (append filename nil))))
@@ -201,7 +201,7 @@ variable `sourcepair-source-extensions'."
 
 
 (defun sourcepair-remove-private-suffixes (basename)
-  (car (delete 'nil (append (mapcar '(lambda (suffix) 
+  (car (delete 'nil (append (mapcar '(lambda (suffix)
 									   (if (string= (substring basename (- (length basename) (length suffix))) suffix)
 										   (substring basename 0 (- (length basename) (length suffix)))))
 									sourcepair-private-header-suffixes)
@@ -210,13 +210,13 @@ variable `sourcepair-source-extensions'."
 (defun sourcepair-analyze-filename (filename)
   (let* ((extension (concat (member ?. (append filename nil))))
 		 (basename (substring filename 0 (- 0 (length extension)))))
-	
+
 	(if (member extension sourcepair-header-extensions)
 		(progn (setq basename (sourcepair-remove-private-suffixes basename))
 			   (cons sourcepair-source-path (mapcar '(lambda (arg) (concat basename arg)) sourcepair-source-extensions)))
 	  (if (member extension sourcepair-source-extensions)
-		  (cons sourcepair-header-path 
-				(apply 'append 
+		  (cons sourcepair-header-path
+				(apply 'append
 					   (mapcar '(lambda (suffix) (mapcar '(lambda (ext) (concat basename suffix ext)) sourcepair-header-extensions))
 							   (append '("") sourcepair-private-header-suffixes))))))))
 
@@ -226,14 +226,14 @@ variable `sourcepair-source-extensions'."
 		(let ((possible-filenames choices)
 			  (matching-filename nil)
 			  (files-in-directory nil))
-		  
+
 		  ;; Check if there's a match in this directory
 		  (while possible-filenames
 			(let ((possible-filename (expand-file-name (car possible-filenames) path)))
 			  (if (file-exists-p possible-filename)
 				  (throw 'matching-filename possible-filename)
 				(setq possible-filenames (cdr possible-filenames)))))
-		  
+
 		  ;; Recursively search subdirectories
 		  (if (not (eq recurse nil))
 			  (progn
@@ -244,9 +244,9 @@ variable `sourcepair-source-extensions'."
 						(progn
 						  (setq possible-subdir (expand-file-name possible-subdir path))
 						  (if (file-directory-p possible-subdir)
-							  (progn 
+							  (progn
 								(message "Checking %s" possible-subdir)
-								(setq matching-filename 
+								(setq matching-filename
 									  (sourcepair-find-one-of possible-subdir choices t))
 								(if (not (eq matching-filename nil))
 									(throw 'matching-filename matching-filename))))))
@@ -270,9 +270,9 @@ variable `sourcepair-source-extensions'."
                   (setq matching-filename (sourcepair-find-one-of (substring path-to-check 0 -2)
                                                                   possible-filenames
                                                                   t))
-                (setq matching-filename 
+                (setq matching-filename
                       (sourcepair-find-one-of path-to-check possible-filenames nil)))
-                
+
               (if (eq matching-filename nil)
                   (setq search-path (cdr search-path))
                 (throw 'found-matching-file matching-filename))))
@@ -324,11 +324,11 @@ See the documentation for these variables for more info.
 (defun sourcepair-yank-advice ()
   "Advice function called after a yank.
 
-This function is called when advising the yank function.  If you are 
-looking at a header file and paste a method declaration that was copied 
+This function is called when advising the yank function.  If you are
+looking at a header file and paste a method declaration that was copied
 from a source file, this function will remove the class prefix (e.g.
 \"Foo::\"), add a semicolon at the end of the declaration and reindent the
-region.  If you paste something other than a method declaration this 
+region.  If you paste something other than a method declaration this
 function will just reindent the region.
 "
   (if (member major-mode '(c-mode c++-mode))
@@ -358,4 +358,3 @@ function will just reindent the region.
 (provide 'sourcepair)
 
 ;;; sourcepair.el ends here
-

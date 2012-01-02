@@ -4,8 +4,9 @@
 (defun frame-resize ()
   "Default Frame resize"
   (interactive)
-  (set-frame-position (selected-frame) (/ (display-pixel-width) 5) 0)
-  (set-frame-width (selected-frame) (truncate (* (/ *width* 5) (/ 4 7.17))))
+  ;; (set-frame-position (selected-frame) (/ (display-pixel-width) 5) 0)
+  (set-frame-position (selected-frame) 0 0)
+  (set-frame-width (selected-frame) (truncate (* (/ *width* 5) (/ 5 7.15))))
   (set-frame-height (selected-frame) (truncate (/ *height* 16.32))))
 
 (defun speedbar-frame-resize ()
@@ -18,12 +19,14 @@
 (defun setup-frames ()
   "Setup Initial Frame and Speedbar"
   (interactive)
-  (frame-resize))
+  (frame-resize)
+  ;; (ecb-minor-mode)
+  ;; (delete-other-windows)
+  )
 
-(global-set-key [(meta o)] 'other-frame)
-(global-set-key [(control tab)] 'speedbar)
+(global-set-key [(meta o)] 'other-window)
 
-(defvar stack-trace-on-error ())
+;; (defvar stack-trace-on-error ())
 
 ;; Recompile Function
 (defun recompile-init ()
