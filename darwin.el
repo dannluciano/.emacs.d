@@ -1,5 +1,5 @@
 ;; Darwin
-;; (set-frame-font "Menlo-12")
+(set-frame-font "Monaco-12")
 
 
 ;; Textmate
@@ -31,3 +31,5 @@
 (global-set-key (kbd "<M-s-right>") 'next-buffer)
 (global-set-key (kbd "<M-s-left>") 'previous-buffer)
 (global-set-key (kbd "<s-return>") 'ns-toggle-fullscreen)
+
+(run-with-idle-timer 0.1 nil 'ns-toggle-fullscreen)
