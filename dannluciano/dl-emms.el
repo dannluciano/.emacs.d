@@ -1,4 +1,5 @@
 ;; EMMS
+(add-to-list 'load-path (concat dotfiles-dir "/elpa/emms-3.0"))
 (require 'emms)
 (require 'emms-setup)
 (require 'emms-mode-line)
@@ -8,4 +9,4 @@
 (setq emms-playlist-buffer-name "*Musics*")
 (emms-mode-line 1)
 (emms-playing-time 1)
-(require 'xwl-emms)
+;; (require 'xwl-emms)
