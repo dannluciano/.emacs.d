@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- emms-show
- emms-lyrics-visit-lyric
- emms-lyrics-toggle-display-on-modeline
- emms-lyrics-toggle
- emms-play-directory-tree
+ load-theme
+ eval-region
+ byte-compile-file
  package-install
  calendar
+ eshell
+ speedbar
 )
 
 ;; ----- smex-data -----
@@ -37,7 +37,7 @@
  (cua-mode . 5)
  (color-theme-ir-black . 7)
  (ibuffer . 6)
- (eval-region . 41)
+ (eval-region . 42)
  (dired . 2)
  (recompile-init . 5)
  (enable-theme . 15)
@@ -92,7 +92,7 @@
  (flyspell-buffer . 1)
  (speedbar-frame-mode . 3)
  (speedbar-frame-resize . 1)
- (load-theme . 70)
+ (load-theme . 77)
  (emms-play-directory . 7)
  (setup-frames . 2)
  (other-frame . 4)
@@ -129,7 +129,7 @@
  (LaTeX-fill-paragraph . 2)
  (speedbar-add-localized-speedbar-support . 1)
  (package-initialize . 2)
- (byte-compile-file . 8)
+ (byte-compile-file . 9)
  (gomoku . 2)
  (beginning-of-buffer-other-window . 1)
  (balance-windows . 3)

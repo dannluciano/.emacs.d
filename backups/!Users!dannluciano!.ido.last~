@@ -1,0 +1,71 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/dannluciano/.emacs.d/elpa/archives/" . "marmalade/")
+ ("/Users/dannluciano/.emacs.d/elpa/" . "sr-speedbar-0.1.8/")
+ ("/Users/dannluciano/.emacs.d/" . "elpa/")
+ ("/Users/dannluciano/sources/flowshop/" . "src/")
+ ("/Users/dannluciano/sources/" . "flowshop/")
+ ("/Users/dannluciano/" . ".emacs.d/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/dannluciano/.emacs.d/"
+ "/Users/dannluciano/.emacs.d/elpa/sr-speedbar-0.1.8/"
+ "/Users/dannluciano/"
+ "/Users/dannluciano/.emacs.d/dannluciano/"
+ "/Users/dannluciano/.emacs.d/elpa/archives/marmalade/"
+ "/Users/dannluciano/.emacs.d/elpa/archives/gnu/"
+ "/Users/dannluciano/.emacs.d/elpa/starter-kit-2.0.3/"
+ "/Users/dannluciano/sources/flowshop/.git/"
+ "/Users/dannluciano/sources/flowshop/src/"
+ "/Users/dannluciano/sources/larissa/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+ "sr-speedbar.el"
+ ".bash_profile"
+ ".zshrc"
+ "theme_mode.el"
+ "ruby.rb"
+ "archive-contents"
+ "starter-kit-autoloads.el"
+ "starter-kit-pkg.el"
+ "starter-kit-misc.el"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/dannluciano/.emacs.d/" (20274 51840) "vendor/" "url/" "tramp" "places" "init.el" "gnu/" "elpa/" "darwin.el" "dannluciano.el" "dannluciano/" "backups/" ".smex-items" ".gitmodules" ".gitignore" ".git/" ".ercrc" ".emms-history" ".emacs.desktop" ".DS_Store" "../" "./")
+
+ ("/Users/dannluciano/" (20274 51847) "sources/" "Sites/" "Public/" "Pictures/" "Music/" "Movies/" "Library/" "Dropbox/" "Downloads/" "Documents/" "Desktop/" ".zshrc.pre-oh-my-zsh" ".zshrc" ".zsh_history" ".zsh-update" ".zcompdump" ".Xauthority" ".Trash/" ".TemporaryItems/" ".ssh/" ".srecode/" ".semanticdb/" ".rvmrc" ".rvm/" ".rnd" ".Rhistory" ".rediscli_history" ".redcar/" ".recentf" ".RData" ".rbx/" ".rake_completion.rb" ".oh-my-zsh/" ".mkvtoolnix/" ".irbrc" ".irb_history" ".irb-history" ".ido.last" ".gnupg/" ".gitignore" ".gitconfig" ".gitattributes" ".git_completion.sh" ".gemrc" ".gem_completion.sh" ".gem/" ".fontconfig/" ".emacs.desktop.lock" ".emacs.desktop" ".emacs.d/" ".emacs-places" ".dvdcss/" ".DS_Store" ".dropbox/" ".cups/" ".CFUserTextEncoding" ".bashrc" ".bash_profile" ".bash_history" ".bash_completion.sh" "../" "./")
+
+ ("/Users/dannluciano/.emacs.d/elpa/sr-speedbar-0.1.8/" (20274 51468) "sr-speedbar.el" "sr-speedbar-pkg.el" "sr-speedbar-autoloads.el" "../" "./")
+
+ ("/Users/dannluciano/.emacs.d/elpa/" (20274 51468) "zenburn-theme-1.1/" "yasnippet-bundle-0.6.1/" "yasnippet-0.6.1/" "yas-jit-0.8.3/" "yaml-mode-0.0.7/" "windsize-0.1/" "wget-1.94/" "w3-4.0.46/" "textmate-3/" "sudoku-0.3/" "starter-kit-ruby-2.0.1/" "starter-kit-lisp-2.0.3/" "starter-kit-eshell-2.0.2/" "starter-kit-2.0.3/" "ssh-config-mode-1.13/" "sr-speedbar-0.1.8/" "solarized-theme-0.2/" "smex-1.1.2/" "rvm-1.1/" "ruby-mode-1.1/" "ruby-compilation-0.8/" "rspec-mode-0.2/" "rinari-2.3/" "regex-tool-1.2/" "rainbow-mode-0.2/" "r-autoyas-0.25/" "peepopen-0.1.0/" "pcache-0.2.2/" "paredit-22/" "org-magit-0.1.2/" "org-20120113/" "oauth2-0.2/" "nginx-mode-1.1/" "mustache-mode-1.1/" "multi-term-0.8.8/" "member-function-0.3.1/" "marmalade-0.0.4/" "markdown-mode-1.8.1/" "magithub-0.1/" "magit-1.0.0/" "mac-key-mode-2010.1.3/" "lua-mode-20110428/" "jump-2.0/" "json-1.2/" "js2-mode-20090814/" "jabber-0.8.90/" "inflections-1.0/" "inf-ruby-2.2.3/" "ido-ubiquitous-0.9/" "idle-highlight-mode-1.1.2/" "htmlize-1.39/" "gtk-look-19/" "gtags-3.2/" "gnuplot-0.6.0/" "gnugo-2.2.12/" "git-commit-0.1/" "gist-0.5/" "gimme-2.1/" "gh-0.4.3/" "gccsense-0.2/" "furl-0.0.2/" "flymake-shell-0.5/" "flymake-ruby-0.4/" "findr-0.7/" "find-file-in-project-3.0/" "fill-column-indicator-0.40/" "feature-mode-0.1/" "erc-nick-notify-0.2.1/" "emms-3.0/" "elixir-mode-1.0.0/" "elisp-slime-nav-0.2/" "eieio-1.4/" "diff-git-0.1.1/" "ctags-update-0.1.2/" "ctags-1.1.1/" "csv-mode-1.50/" "crontab-mode-1.2/" "cppcheck-1.0/" "color-theme-6.6.1/" "cmake-mode-20110824/" "clojure-mode-1.11.5/" "c-eldoc-0.6/" "bubbles-0.5/" "autopair-0.3/" "auctex-11.86/" "archives/" "apache-mode-2.0/" "android-mode-0.1/" "../" "./")
+
+ ("/Users/dannluciano/.emacs.d/dannluciano/" (20160 34604) "theme_mode.el" "latex_mode.el" "go_mode.el" "frames_mode.el" "flyspell_mode.el" "eshell_mode.el" "erc_mode.el" "emms_mode.el" "edit_mode.el" "customs.el" "c_mode.el" "aspell_mode.el" "../" "./")
+
+ ("/Users/dannluciano/.emacs.d/elpa/archives/marmalade/" (20156 44204) "archive-contents" "../" "./")
+
+ ("/Users/dannluciano/.emacs.d/elpa/archives/gnu/" (20156 44198) "archive-contents" "../" "./")
+
+ ("/Users/dannluciano/.emacs.d/elpa/archives/" (20156 44204) "marmalade/" "gnu/" "../" "./")
+
+ ("/Users/dannluciano/.emacs.d/elpa/starter-kit-2.0.3/" (20157 55140) "starter-kit.elc" "starter-kit.el" "starter-kit-pkg.elc" "starter-kit-pkg.el" "starter-kit-misc.elc" "starter-kit-misc.el" "starter-kit-defuns.elc" "starter-kit-defuns.el" "starter-kit-autoloads.el~" "starter-kit-autoloads.el" ".#starter-kit-defuns.el" "#starter-kit-defuns.el#" "../" "./")
+
+ ("/Users/dannluciano/sources/flowshop/.git/" (20156 43573) "refs/" "objects/" "logs/" "info/" "index" "hooks/" "HEAD" "FETCH_HEAD" "description" "config" "COMMIT_EDITMSG" "branches/" "../" "./")
+
+ ("/Users/dannluciano/sources/flowshop/src/" (20072 15036) "tools.hpp" "solution.o" "solution.hpp" "solution.cpp" "problem.o" "problem.hpp" "problem.cpp" "nul" "main.o" "main.cpp" "input_parser.o" "input_parser.hpp" "input_parser.cpp" "flowshop" "../" "./")
+
+ ("/Users/dannluciano/sources/flowshop/" (20072 15036) "Taillard_DueDates.7z" "src/" "results/" "README" "nul" "MOPFSP_Results.7z" "makefile" "instances/" "flowshop" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/dannluciano/sources/" (20072 15021) "mydotfiles/" "larissa/" "flowshop/" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

@@ -1,0 +1,29 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Wed Feb  8 16:18:24 2012
+;; Desktop file format version 206
+;; Emacs version 24.0.50.1
+
+;; Global section:
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring nil)
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("~/.emacs.d/" "/Users/dannluciano/.emacs.d/init.el"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/Users/dannluciano/.emacs.d/init.el"
+  "init.el"
+  'emacs-lisp-mode
+  '(auto-fill-mode yas/minor-mode textmate-mode paredit-mode elisp-slime-nav-mode eldoc-mode hi-lock-mode)
+  3558
+  '(3534 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix) (column-number-mode . t)))
+
