@@ -1,0 +1,8 @@
+make
+cd ..
+make
+ls
+purge
+purge
+ln -s .emacs.d/gnus.el .gnus
+ls

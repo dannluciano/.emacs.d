@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- load-theme
- eval-region
- byte-compile-file
- package-install
- calendar
+ gnus
  eshell
- speedbar
+ smtpmail-send-queued-mail
+ eval-region
+ rmail
+ indent-new-comment-line
+ customize-variable
 )
 
 ;; ----- smex-data -----
@@ -18,18 +18,18 @@
  (maximize-window . 3)
  (magit-status . 2)
  (speedbar . 39)
- (list-packages . 16)
- (indent-new-comment-line . 1)
+ (list-packages . 17)
+ (indent-new-comment-line . 2)
  (comment-box . 1)
- (package-install . 40)
+ (package-install . 42)
  (make-directory . 1)
  (frame-resize . 6)
  (fill-region . 10)
  (ido-enter-switch-buffer . 4)
- (eshell . 47)
+ (eshell . 51)
  (whitespace-mode . 4)
- (comment-region . 2)
- (server-start . 2)
+ (comment-region . 3)
+ (server-start . 3)
  (hl-line-mode . 16)
  (global-hl-line-mode . 7)
  (color-theme-analyze-defun . 1)
@@ -37,7 +37,7 @@
  (cua-mode . 5)
  (color-theme-ir-black . 7)
  (ibuffer . 6)
- (eval-region . 42)
+ (eval-region . 54)
  (dired . 2)
  (recompile-init . 5)
  (enable-theme . 15)
@@ -85,26 +85,26 @@
  (pp-eval-expression . 1)
  (ess-help . 1)
  (inferior-ess . 1)
- (gnus . 1)
- (rmail . 1)
- (customize-group . 22)
+ (gnus . 10)
+ (rmail . 6)
+ (customize-group . 27)
  (flyspell-mode . 4)
  (flyspell-buffer . 1)
  (speedbar-frame-mode . 3)
  (speedbar-frame-resize . 1)
- (load-theme . 77)
+ (load-theme . 85)
  (emms-play-directory . 7)
  (setup-frames . 2)
  (other-frame . 4)
  (eval-expression . 13)
- (org-mode . 1)
- (package-refresh-contents . 10)
+ (org-mode . 2)
+ (package-refresh-contents . 11)
  (ecb-activate . 12)
  (ecb-minor-mode . 8)
  (ecb-customize . 1)
  (ecb-minor-menu . 1)
  (emacs-version . 1)
- (compile . 4)
+ (compile . 5)
  (sr-speedbar-open . 4)
  (select-frame-by-name . 3)
  (url-view-url . 3)
@@ -174,4 +174,7 @@
  (emms-play-directory-tree . 2)
  (emms-lyrics-toggle-display-on-modeline . 2)
  (emms-show . 2)
+ (gud-gdb . 3)
+ (customize-variable . 2)
+ (smtpmail-send-queued-mail . 1)
 )

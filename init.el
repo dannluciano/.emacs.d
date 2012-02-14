@@ -15,6 +15,7 @@
  '(global-font-lock-mode t nil (font-lock))
  '(indicate-buffer-boundaries nil)
  '(save-place t nil (saveplace))
+ '(sendmail-query-once-function (quote smtpmail-send-it) t)
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(speedbar-show-unknown-files t))
@@ -94,7 +95,7 @@
 
 ;; Color Theme
 ;; (if window-system
-;; (load-theme 'solarized-dark)
+(load-theme 'solarized-dark)
 ;; (load-theme 'wombat)
 
 
