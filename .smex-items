@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- gnus
- eshell
- smtpmail-send-queued-mail
+ load-theme
  eval-region
- rmail
- indent-new-comment-line
- customize-variable
+ comment-or-uncomment-region
+ kill-buffer
+ byte-compile-file
+ compile
+ gnus
 )
 
 ;; ----- smex-data -----
@@ -37,7 +37,7 @@
  (cua-mode . 5)
  (color-theme-ir-black . 7)
  (ibuffer . 6)
- (eval-region . 54)
+ (eval-region . 58)
  (dired . 2)
  (recompile-init . 5)
  (enable-theme . 15)
@@ -92,7 +92,7 @@
  (flyspell-buffer . 1)
  (speedbar-frame-mode . 3)
  (speedbar-frame-resize . 1)
- (load-theme . 85)
+ (load-theme . 88)
  (emms-play-directory . 7)
  (setup-frames . 2)
  (other-frame . 4)
@@ -104,7 +104,7 @@
  (ecb-customize . 1)
  (ecb-minor-menu . 1)
  (emacs-version . 1)
- (compile . 5)
+ (compile . 6)
  (sr-speedbar-open . 4)
  (select-frame-by-name . 3)
  (url-view-url . 3)
@@ -114,7 +114,7 @@
  (esk-lorem . 4)
  (ecb-select-ecb-frame . 1)
  (customize . 6)
- (kill-buffer . 2)
+ (kill-buffer . 3)
  (ecb-change-layout . 9)
  (semantic-mode . 1)
  (ecb-deactivate . 1)
@@ -129,7 +129,7 @@
  (LaTeX-fill-paragraph . 2)
  (speedbar-add-localized-speedbar-support . 1)
  (package-initialize . 2)
- (byte-compile-file . 9)
+ (byte-compile-file . 10)
  (gomoku . 2)
  (beginning-of-buffer-other-window . 1)
  (balance-windows . 3)
@@ -177,4 +177,5 @@
  (gud-gdb . 3)
  (customize-variable . 2)
  (smtpmail-send-queued-mail . 1)
+ (comment-or-uncomment-region . 1)
 )

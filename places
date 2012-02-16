@@ -1,5 +1,8 @@
 ;;; -*- coding: utf-8 -*-
-(("/Users/dannluciano/.emacs.d/.gitmodules" . 204)
- ("/Users/dannluciano/.emacs.d/dannluciano.el" . 140)
- ("/Users/dannluciano/.emacs.d/init.el" . 8176)
- ("/Users/dannluciano/.ido.last" . 8306))
+(("/home/dannluciano/.bash_profile" . 69)
+ ("/home/dannluciano/.bashrc" . 1537)
+ ("/home/dannluciano/.emacs.d/.emms-history" . 154)
+ ("/home/dannluciano/.emacs.d/darwin.el" . 45)
+ ("/home/dannluciano/.emacs.d/gnu/linux.el" . 426)
+ ("/home/dannluciano/.ido.last" . 4271)
+ ("/usr/local/share/emacs/23.3/etc/THE-GNU-PROJECT" . 539))
