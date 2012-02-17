@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- load-theme
+ customize-variable
+ erc
+ customize-group
+ ibuffer
  eval-region
- comment-or-uncomment-region
- kill-buffer
- byte-compile-file
- compile
- gnus
+ package-install
+ ispell
 )
 
 ;; ----- smex-data -----
@@ -21,7 +21,7 @@
  (list-packages . 17)
  (indent-new-comment-line . 2)
  (comment-box . 1)
- (package-install . 42)
+ (package-install . 43)
  (make-directory . 1)
  (frame-resize . 6)
  (fill-region . 10)
@@ -36,8 +36,8 @@
  (color-theme-black-on-gray . 1)
  (cua-mode . 5)
  (color-theme-ir-black . 7)
- (ibuffer . 6)
- (eval-region . 58)
+ (ibuffer . 8)
+ (eval-region . 60)
  (dired . 2)
  (recompile-init . 5)
  (enable-theme . 15)
@@ -85,14 +85,14 @@
  (pp-eval-expression . 1)
  (ess-help . 1)
  (inferior-ess . 1)
- (gnus . 10)
+ (gnus . 11)
  (rmail . 6)
- (customize-group . 27)
+ (customize-group . 28)
  (flyspell-mode . 4)
  (flyspell-buffer . 1)
  (speedbar-frame-mode . 3)
  (speedbar-frame-resize . 1)
- (load-theme . 88)
+ (load-theme . 89)
  (emms-play-directory . 7)
  (setup-frames . 2)
  (other-frame . 4)
@@ -122,7 +122,7 @@
  (pascal-mode . 1)
  (ruby-mode . 2)
  (customize-browse . 1)
- (erc . 3)
+ (erc . 5)
  (column-number-mode . 1)
  (fill-region-as-paragraph . 1)
  (fill-individual-paragraphs . 2)
@@ -145,7 +145,7 @@
  (twitter-get-friends-timeline . 4)
  (package-list-packages-no-fetch . 3)
  (twittering-mode . 3)
- (twit . 4)
+ (twit . 5)
  (flymake-ruby-load . 3)
  (rinari-minor-mode . 2)
  (flymake-mode . 2)
@@ -165,7 +165,7 @@
  (customize-create-theme . 1)
  (set-frame-font . 5)
  (ns-popup-font-panel . 1)
- (imenu . 1)
+ (imenu . 2)
  (save-buffer . 1)
  (emms-stop . 1)
  (emms-lyrics-enable . 1)
@@ -175,7 +175,9 @@
  (emms-lyrics-toggle-display-on-modeline . 2)
  (emms-show . 2)
  (gud-gdb . 3)
- (customize-variable . 2)
+ (customize-variable . 3)
  (smtpmail-send-queued-mail . 1)
  (comment-or-uncomment-region . 1)
+ (ispell . 1)
+ (toggle-fullscreen . 1)
 )

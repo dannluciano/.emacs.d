@@ -1,6 +1,6 @@
 ;; Textmate
 (require 'textmate)
-
+(textmate-mode)
 
 (cua-mode)
 (set-default-font "Monospace-14")
