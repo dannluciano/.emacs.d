@@ -100,7 +100,7 @@
 
 
 (whitespace-mode t)
-(eshell)
+;; (eshell)
 (sr-speedbar-toggle)
 (other-window 1)
 (server-start)
