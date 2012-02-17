@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- customize-variable
- erc
- customize-group
- ibuffer
- eval-region
- package-install
- ispell
+ load-theme
+ list-packages
+ string-insert-rectangle
+ open-rectangle
+ column-number-mode
+ rectangle-number-lines
+ eshell
 )
 
 ;; ----- smex-data -----
@@ -18,15 +18,15 @@
  (maximize-window . 3)
  (magit-status . 2)
  (speedbar . 39)
- (list-packages . 17)
+ (list-packages . 19)
  (indent-new-comment-line . 2)
  (comment-box . 1)
- (package-install . 43)
+ (package-install . 42)
  (make-directory . 1)
  (frame-resize . 6)
  (fill-region . 10)
  (ido-enter-switch-buffer . 4)
- (eshell . 51)
+ (eshell . 53)
  (whitespace-mode . 4)
  (comment-region . 3)
  (server-start . 3)
@@ -36,8 +36,8 @@
  (color-theme-black-on-gray . 1)
  (cua-mode . 5)
  (color-theme-ir-black . 7)
- (ibuffer . 8)
- (eval-region . 60)
+ (ibuffer . 6)
+ (eval-region . 55)
  (dired . 2)
  (recompile-init . 5)
  (enable-theme . 15)
@@ -92,7 +92,7 @@
  (flyspell-buffer . 1)
  (speedbar-frame-mode . 3)
  (speedbar-frame-resize . 1)
- (load-theme . 89)
+ (load-theme . 86)
  (emms-play-directory . 7)
  (setup-frames . 2)
  (other-frame . 4)
@@ -104,7 +104,7 @@
  (ecb-customize . 1)
  (ecb-minor-menu . 1)
  (emacs-version . 1)
- (compile . 6)
+ (compile . 5)
  (sr-speedbar-open . 4)
  (select-frame-by-name . 3)
  (url-view-url . 3)
@@ -114,7 +114,7 @@
  (esk-lorem . 4)
  (ecb-select-ecb-frame . 1)
  (customize . 6)
- (kill-buffer . 3)
+ (kill-buffer . 2)
  (ecb-change-layout . 9)
  (semantic-mode . 1)
  (ecb-deactivate . 1)
@@ -122,17 +122,17 @@
  (pascal-mode . 1)
  (ruby-mode . 2)
  (customize-browse . 1)
- (erc . 5)
- (column-number-mode . 1)
+ (erc . 7)
+ (column-number-mode . 3)
  (fill-region-as-paragraph . 1)
  (fill-individual-paragraphs . 2)
  (LaTeX-fill-paragraph . 2)
  (speedbar-add-localized-speedbar-support . 1)
  (package-initialize . 2)
- (byte-compile-file . 10)
+ (byte-compile-file . 9)
  (gomoku . 2)
  (beginning-of-buffer-other-window . 1)
- (balance-windows . 3)
+ (balance-windows . 7)
  (shrink-window . 3)
  (ibuffer-other-window . 1)
  (LaTeX-fill-buffer . 1)
@@ -152,7 +152,7 @@
  (rinari-rake . 1)
  (rinari-web-server . 2)
  (rinari-script . 1)
- (w3 . 2)
+ (w3 . 3)
  (auto-fill-mode . 1)
  (javascript-mode . 1)
  (nterm . 1)
@@ -165,7 +165,7 @@
  (customize-create-theme . 1)
  (set-frame-font . 5)
  (ns-popup-font-panel . 1)
- (imenu . 2)
+ (imenu . 1)
  (save-buffer . 1)
  (emms-stop . 1)
  (emms-lyrics-enable . 1)
@@ -177,7 +177,12 @@
  (gud-gdb . 3)
  (customize-variable . 3)
  (smtpmail-send-queued-mail . 1)
- (comment-or-uncomment-region . 1)
- (ispell . 1)
- (toggle-fullscreen . 1)
+ (mail . 1)
+ (ispell-word . 4)
+ (ispell . 2)
+ (c++-mode . 1)
+ (twittering-retweet . 1)
+ (rectangle-number-lines . 1)
+ (open-rectangle . 4)
+ (string-insert-rectangle . 1)
 )

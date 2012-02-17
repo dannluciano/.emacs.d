@@ -2,10 +2,13 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/Users/dannluciano/Sources/cpp/" . "examples/")
+ ("/Users/dannluciano/Sources/" . "cpp/")
+ ("/Users/dannluciano/.oh-my-zsh/" . "plugins/")
  ("/Users/dannluciano/temp/" . "mustache-sinatra-example/")
  ("/Users/dannluciano/.emacs.d/elpa/archives/" . "marmalade/")
  ("/Users/dannluciano/.emacs.d/elpa/" . "sr-speedbar-0.1.8/")
- ("/Users/dannluciano/.emacs.d/" . "dannluciano/")
+ ("/Users/dannluciano/.emacs.d/" . "gnu/")
  ("/Users/dannluciano/sources/flowshop/" . "src/")
  ("/Users/dannluciano/sources/" . "flowshop/")
  ("/Users/dannluciano/" . ".emacs.d/")
@@ -14,9 +17,13 @@
 ;; ----- ido-work-directory-list -----
 (
  "/Users/dannluciano/.emacs.d/"
- "/Users/dannluciano/"
- "/Users/dannluciano/temp/mustache-sinatra-example/"
+ "/Users/dannluciano/.emacs.d/gnu/"
+ "/Users/dannluciano/Sources/"
  "/Users/dannluciano/.emacs.d/dannluciano/"
+ "/Users/dannluciano/Sources/cpp/examples/"
+ "/Users/dannluciano/"
+ "/Users/dannluciano/.oh-my-zsh/plugins/"
+ "/Users/dannluciano/temp/mustache-sinatra-example/"
  "/Users/dannluciano/Downloads/"
  "/Users/dannluciano/sources/flowshop/"
  "/Users/dannluciano/sources/flowshop/src/"
@@ -30,25 +37,37 @@
 
 ;; ----- ido-work-file-list -----
 (
- "gnus.el"
- "dannluciano.el"
- ".authinfo.gpg"
- ".authinfo"
- "config.ru"
- "app.rb"
  "darwin.el"
- "dl-others.el"
+ "linux.el"
  "init.el"
- "howto_uninstall_server.txt"
+ "gcc_default"
+ "dl-key-binddings.el"
+ "cplusplus.cpp"
+ "makefile"
+ "cplusplus.c"
+ ".zshrc"
+ "dl-gcc"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/Users/dannluciano/.emacs.d/" (20281 46979) "vendor/" "var/" "url/" "tramp" "places" "init.el" "gnu/" "eshell/" "elpa/" "darwin.el" "dannluciano.el" "dannluciano/" "backups/" "auto-save-list/" ".smex-items" ".gitmodules" ".gitignore" ".git/" ".ercrc" ".emms-history" ".emacs.desktop" ".DS_Store" "../" "./")
+ ("/Users/dannluciano/" (20286 35036) "temp/" "Sources/" "Sites/" "Public/" "Programs/" "Pictures/" "News/" "Music/" "Movies/" "Mail/" "Library/" "howto_uninstall_server.txt" "Dropbox/" "Downloads/" "Documents/" "Desktop/" ".zshrc" ".zsh_history" ".zsh-update" ".zcompdump" ".Xauthority" ".twittering-mode.gpg" ".Trash/" ".TemporaryItems/" ".subversion/" ".ssh/" ".srecode/" ".sh_history" ".semanticdb/" ".rvmrc" ".rvm/" ".rnd" ".Rhistory" ".rediscli_history" ".recentf" ".RData" ".rbx/" ".rake_completion.rb" ".oh-my-zsh/" ".npm/" ".newsrc-dribble" ".mkvtoolnix/" ".local/" ".irbrc" ".irb_history" ".irb-history" ".ido.last" ".hgignore_global" ".gpg-agent-info" ".gnus" ".gnupg/" ".gitignore_global" ".gitignore" ".gitconfig" ".gitattributes" ".git_completion.sh" ".gemrc" ".gem_completion.sh" ".gem/" ".gdb_history" ".fontconfig/" ".emacs.desktop.lock" ".emacs.desktop" ".emacs.d/" ".emacs-places" ".dvdcss/" ".DS_Store" ".dropbox/" ".cups/" ".config/" ".CFUserTextEncoding" ".bashrc" ".bash_profile" ".bash_history" ".bash_completion.sh" ".authinfo.gpg" "../" "./")
 
- ("/Users/dannluciano/" (20281 46789) "temp/" "Sources/" "Sites/" "Public/" "Programs/" "Pictures/" "News/" "Music/" "Movies/" "Mail/" "Library/" "howto_uninstall_server.txt" "Dropbox/" "Downloads/" "Documents/" "Desktop/" ".zshrc" ".zsh_history" ".zsh-update" ".zcompdump" ".Xauthority" ".twittering-mode.gpg" ".Trash/" ".TemporaryItems/" ".subversion/" ".ssh/" ".srecode/" ".semanticdb/" ".rvmrc" ".rvm/" ".rnd" ".Rhistory" ".rediscli_history" ".recentf" ".RData" ".rbx/" ".rake_completion.rb" ".oh-my-zsh/" ".mkvtoolnix/" ".local/" ".irbrc" ".irb_history" ".irb-history" ".ido.last" ".hgignore_global" ".gpg-agent-info" ".gnupg/" ".gitignore_global" ".gitignore" ".gitconfig" ".gitattributes" ".git_completion.sh" ".gemrc" ".gem_completion.sh" ".gem/" ".gdb_history" ".fontconfig/" ".emacs.desktop" ".emacs.d/" ".emacs-places" ".dvdcss/" ".DS_Store" ".dropbox/" ".cups/" ".config/" ".CFUserTextEncoding" ".bashrc" ".bash_profile" ".bash_history" ".bash_completion.sh" ".authinfo.gpg" "../" "./")
+ ("/Users/dannluciano/.emacs.d/gnu/" (20286 35025) "linux.el" "../" "./")
 
- ("/Users/dannluciano/.emacs.d/dannluciano/" (20277 37241) "xwl-emms.el" "dl-twitter.el" "dl-ruby.el" "dl-r.el" "dl-others.el" "dl-latex.el" "dl-go.el" "dl-git.el" "dl-flyspell.el" "dl-eshell.el" "dl-erc.el" "dl-emms.el" "dl-editor.el" "dl-debugger.el" "dl-c.el" "dl-bindings.el" "dl-aspell.el" ".emacs.desktop" "../" "./")
+ ("/Users/dannluciano/.emacs.d/dannluciano/" (20286 34968) "xwl-emms.el" "dl-twitter.el" "dl-ruby.el" "dl-r.el" "dl-others.el" "dl-latex.el" "dl-key-binddings.el" "dl-go.el" "dl-git.el" "dl-flyspell.el" "dl-eshell.el" "dl-erc.el" "dl-emms.el" "dl-editor.el" "dl-debugger.el" "dl-c.el" "dl-bindings.el" "dl-aspell.el" ".emacs.desktop" "../" "./")
+
+ ("/Users/dannluciano/.emacs.d/" (20286 34968) "vendor/" "var/" "url/" "tramp" "places" "init.el" "gnu/" "eshell/" "elpa/" "darwin.el" "dannluciano.el" "dannluciano/" "backups/" "auto-save-list/" ".smex-items" ".gitmodules" ".gitignore" ".git/" ".ercrc" ".emms-history" ".emacs.desktop" ".DS_Store" "../" "./")
+
+ ("/Users/dannluciano/Sources/cpp/examples/" (20284 61049) "typeof.c" "time.c" "threads.c" "test_float.c" "string_concat_sintax.c" "sqlite3-test/" "size_types.c" "simple.c" "serialize.c" "rbtree.h" "rbtree.c" "pthreads.c" "print_env.c" "print.c" "options.h" "null.c" "neuron artificial/" "ncurses/" "mod2.c" "mod1.c" "memory.c" "map.c" "makefile" "main.s" "main.dSYM/" "main.c" "main" "length_size.c" "io.c" "hash.h" "hash.c" "getopt_long.c" "getopt.c" "getcgi.c" "gc/" "for.c" "fibonacci/" "dynamic_array.c" "cplusplus.cpp" "ConversorBinario.c" "cmake/" "block.c" "autotools/" "assert.c" "args.c" "allegro/" "a.out" ".git/" "../" "./")
+
+ ("/Users/dannluciano/Sources/cpp/" (20270 13619) "old/" "mini_bench/" "makefile 2" "makefile" "hv-2.0rc1/" "hello-2.6/" "examples/" "dlib/" "arboretum/" "ann/" ".metadata/" "../" "./")
+
+ ("/Users/dannluciano/Sources/" (20281 1056) "web/" "tex/" "solarized/" "ruby/" "r/" "postgraduate/" "packages.brew" "objectivej/" "objectivec/" "nginx.conf" "mylanguage/" "mydotfiles/" "macbook" "llvm_default" "lisp/" "java/" "iterm/" "i3r/" "humans.txt" "gitignore/" "gcc_default" "erlang/" "Eclipse/" "dropbox" "cpp/" "clojure/" "cdtoiso.app/" "C Basico.mindnode" "BasicObject.mindnode/" "asweb/" ".DS_Store" "../" "./")
+
+ ("/Users/dannluciano/.oh-my-zsh/plugins/" (20274 47077) "yum/" "wakeonlan/" "vundle/" "vi-mode/" "vagrant/" "thor/" "textmate/" "terminitor/" "terminalapp/" "taskwarrior/" "symfony2/" "svn/" "ssh-agent/" "sprunge/" "rvm/" "ruby/" "redis-cli/" "rbenv/" "rake/" "rails3/" "rails/" "python/" "powder/" "pow/" "pip/" "phing/" "perl/" "osx/" "nyan/" "npm/" "node/" "mysql-macports/" "mercurial/" "macports/" "lol/" "lighthouse/" "lein/" "knife/" "kate/" "jake-node/" "history-substring-search/" "heroku/" "grails/" "gradle/" "gpg-agent/" "gnu-utils/" "github/" "git-flow/" "git/" "gem/" "gas/" "extract/" "django/" "dirpersist/" "debian/" "cpanm/" "compleat/" "command-not-found/" "cloudapp/" "cap/" "cake/" "bundler/" "brew/" "battery/" "autojump/" "archlinux/" "apache2-macports/" "ant/" "../" "./")
+
+ ("/Users/dannluciano/.oh-my-zsh/" (20274 47078) "tools/" "themes/" "templates/" "README.textile" "plugins/" "oh-my-zsh.sh" "log/" "lib/" "custom/" ".gitignore" ".git/" "../" "./")
 
  ("/Users/dannluciano/temp/mustache-sinatra-example/" (20278 59306) "views/" "templates/" "README.md" "Gemfile.lock" "Gemfile" "config.ru" "app.rb" ".git/" "../" "./")
 
