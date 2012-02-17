@@ -15,6 +15,7 @@
 
 ;; (run-with-idle-timer 0.1 nil 'ns-toggle-fullscreen)
 
+
 ;; Growl Notification
 (defvar growlnotify-command (executable-find "growlnotify") "The path to growlnotify")
 

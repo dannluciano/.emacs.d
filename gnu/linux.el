@@ -2,6 +2,11 @@
 (set-default-font "Monospace-14")
 
 
+;; Textmate
+(require 'textmate)
+(textmate-mode)
+
+
 (cua-mode)
 
 
