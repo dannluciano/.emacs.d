@@ -24,3 +24,10 @@
                                   'fullboth)))))
 
 ;; (run-with-idle-timer 0.1 nil 'toggle-fullscreen)
+
+
+;; ERC Nick Notify
+(autoload 'erc-nick-notify-mode "erc-nick-notify"
+  "Minor mode that calls `erc-nick-notify-cmd' when his nick gets
+mentioned in an erc channel" t)
+(eval-after-load 'erc '(erc-nick-notify-mode t))

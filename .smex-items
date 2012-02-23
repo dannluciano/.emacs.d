@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- load-theme
- list-packages
- string-insert-rectangle
- open-rectangle
- column-number-mode
- rectangle-number-lines
- eshell
+ erc
+ gnus
+ browse-url
+ url-view-url
+ erc-select
+ rmail
+ package-install
 )
 
 ;; ----- smex-data -----
@@ -21,7 +21,7 @@
  (list-packages . 19)
  (indent-new-comment-line . 2)
  (comment-box . 1)
- (package-install . 42)
+ (package-install . 43)
  (make-directory . 1)
  (frame-resize . 6)
  (fill-region . 10)
@@ -37,7 +37,7 @@
  (cua-mode . 5)
  (color-theme-ir-black . 7)
  (ibuffer . 6)
- (eval-region . 55)
+ (eval-region . 57)
  (dired . 2)
  (recompile-init . 5)
  (enable-theme . 15)
@@ -85,10 +85,10 @@
  (pp-eval-expression . 1)
  (ess-help . 1)
  (inferior-ess . 1)
- (gnus . 11)
- (rmail . 6)
- (customize-group . 28)
- (flyspell-mode . 4)
+ (gnus . 15)
+ (rmail . 7)
+ (customize-group . 29)
+ (flyspell-mode . 5)
  (flyspell-buffer . 1)
  (speedbar-frame-mode . 3)
  (speedbar-frame-resize . 1)
@@ -96,8 +96,8 @@
  (emms-play-directory . 7)
  (setup-frames . 2)
  (other-frame . 4)
- (eval-expression . 13)
- (org-mode . 2)
+ (eval-expression . 14)
+ (org-mode . 3)
  (package-refresh-contents . 11)
  (ecb-activate . 12)
  (ecb-minor-mode . 8)
@@ -107,8 +107,8 @@
  (compile . 5)
  (sr-speedbar-open . 4)
  (select-frame-by-name . 3)
- (url-view-url . 3)
- (browse-url . 1)
+ (url-view-url . 5)
+ (browse-url . 2)
  (rvm-use . 1)
  (emacs-lisp-byte-compile-and-load . 1)
  (esk-lorem . 4)
@@ -122,7 +122,7 @@
  (pascal-mode . 1)
  (ruby-mode . 2)
  (customize-browse . 1)
- (erc . 7)
+ (erc . 18)
  (column-number-mode . 3)
  (fill-region-as-paragraph . 1)
  (fill-individual-paragraphs . 2)
@@ -132,7 +132,7 @@
  (byte-compile-file . 9)
  (gomoku . 2)
  (beginning-of-buffer-other-window . 1)
- (balance-windows . 7)
+ (balance-windows . 8)
  (shrink-window . 3)
  (ibuffer-other-window . 1)
  (LaTeX-fill-buffer . 1)
@@ -175,7 +175,7 @@
  (emms-lyrics-toggle-display-on-modeline . 2)
  (emms-show . 2)
  (gud-gdb . 3)
- (customize-variable . 3)
+ (customize-variable . 4)
  (smtpmail-send-queued-mail . 1)
  (mail . 1)
  (ispell-word . 4)
@@ -185,4 +185,6 @@
  (rectangle-number-lines . 1)
  (open-rectangle . 4)
  (string-insert-rectangle . 1)
+ (orgtbl-to-csv . 1)
+ (erc-select . 1)
 )

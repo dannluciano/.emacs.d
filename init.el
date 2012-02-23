@@ -94,14 +94,14 @@
 ;; (if (fboundp 'display-battery-mode) (display-battery-mode t))
 
 ;; Color Theme
-;; (if window-system
-(load-theme 'solarized-dark)
-;; (load-theme 'wombat)
+(if window-system
+    (load-theme 'solarized-dark)
+  (load-theme 'wombat))
 
 
 (whitespace-mode t)
 ;; (eshell)
-(sr-speedbar-toggle)
+;; (sr-speedbar-toggle)
 (other-window 1)
 (server-start)
 
