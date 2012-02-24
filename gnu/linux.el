@@ -1,25 +1,17 @@
-(message "GNU/Linux")
+;; GNU/Linux
+(set-default-font "Monospace-14")
+
+
+;; Textmate
+(require 'textmate)
+(textmate-mode)
+
+
 (cua-mode)
-;; (set-default-font "Monospace-14")
 
 
-(global-set-key (kbd "s-b") 'ibuffer)
-(global-set-key (kbd "s-0") 'delete-window)
-(global-set-key (kbd "s-1") 'delete-other-windows)
-(global-set-key (kbd "s-2") 'split-window-vertically)
-(global-set-key (kbd "s-3") 'split-window-horizontally)
-(global-set-key (kbd "s-6") 'flymake-mode)
-(global-set-key (kbd "s-;") 'comment-or-uncomment-region-or-line)
-(global-set-key (kbd "<s-up>") 'beginning-of-buffer)
-(global-set-key (kbd "<s-down>") 'end-of-buffer)
-(global-set-key (kbd "<s-right>") 'end-of-line)
-(global-set-key (kbd "<s-left>") 'beginning-of-line-text)
-(global-set-key (kbd "<M-left>") 'backward-word)
-(global-set-key (kbd "<M-right>") 'forward-word)
-(global-set-key (kbd "<M-up>") 'backward-paragraph)
-(global-set-key (kbd "<M-down>") 'forward-paragraph)
-(global-set-key (kbd "<M-s-right>") 'next-buffer)
-(global-set-key (kbd "<M-s-left>") 'previous-buffer)
+;; GNU/Linux friendley keys map
+(global-set-key (kbd "<s-return>") 'toggle-fullscreen)
 
 
 (defun toggle-fullscreen (&optional f)
@@ -32,3 +24,10 @@
                                   'fullboth)))))
 
 ;; (run-with-idle-timer 0.1 nil 'toggle-fullscreen)
+
+
+;; ERC Nick Notify
+(autoload 'erc-nick-notify-mode "erc-nick-notify"
+  "Minor mode that calls `erc-nick-notify-cmd' when his nick gets
+mentioned in an erc channel" t)
+(eval-after-load 'erc '(erc-nick-notify-mode t))

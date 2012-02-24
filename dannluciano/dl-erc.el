@@ -5,14 +5,15 @@
                                    readonly ring smiley sound stamp
                                    spelling track)))
 
+;; (setq erc-server-coding-system '(utf-8 . utf-8))
 (setq erc-server "irc.freenode.net"
-  erc-port 6667
-  erc-nick "dannluciano"
-  erc-user-full-name user-full-name
-  erc-prompt-for-password t)
+      erc-port 6667
+      erc-nick "dannluciano"
+      erc-user-full-name user-full-name
+      erc-prompt-for-password t)
 
 (require 'erc-match)
-    (setq erc-keywords '("dannluciano"))
+(setq erc-keywords '("dannluciano"))
 
 (setq erc-kill-buffer-on-part t)
 (setq erc-kill-queries-on-quit t)

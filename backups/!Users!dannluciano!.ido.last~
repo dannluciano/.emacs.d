@@ -1,0 +1,106 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/dannluciano/Sources/cpp/" . "examples/")
+ ("/Users/dannluciano/Sources/" . "cpp/")
+ ("/Users/dannluciano/.oh-my-zsh/" . "plugins/")
+ ("/Users/dannluciano/temp/" . "mustache-sinatra-example/")
+ ("/Users/dannluciano/.emacs.d/elpa/archives/" . "marmalade/")
+ ("/Users/dannluciano/.emacs.d/elpa/" . "csv-mode-1.50/")
+ ("/Users/dannluciano/.emacs.d/" . "dannluciano/")
+ ("/Users/dannluciano/sources/flowshop/" . "src/")
+ ("/Users/dannluciano/sources/" . "flowshop/")
+ ("/Users/dannluciano/" . ".emacs.d/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/dannluciano/.emacs.d/dannluciano/"
+ "/Users/dannluciano/"
+ "/Users/dannluciano/.emacs.d/"
+ "/Users/dannluciano/.emacs.d/elpa/csv-mode-1.50/"
+ "/Users/dannluciano/.emacs.d/gnu/"
+ "/Users/dannluciano/.emacs.d/vendor/"
+ "/Users/dannluciano/Sources/"
+ "/Users/dannluciano/Sources/cpp/examples/"
+ "/Users/dannluciano/.oh-my-zsh/plugins/"
+ "/Users/dannluciano/temp/mustache-sinatra-example/"
+ "/Users/dannluciano/Downloads/"
+ "/Users/dannluciano/sources/flowshop/"
+ "/Users/dannluciano/sources/flowshop/src/"
+ "/Users/dannluciano/.emacs.d/elpa/sr-speedbar-0.1.8/"
+ "/Users/dannluciano/.emacs.d/elpa/archives/marmalade/"
+ "/Users/dannluciano/.emacs.d/elpa/archives/gnu/"
+ "/Users/dannluciano/.emacs.d/elpa/starter-kit-2.0.3/"
+ "/Users/dannluciano/sources/flowshop/.git/"
+ "/Users/dannluciano/sources/larissa/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "dl-erc.el"
+ ".authinfo.gpg"
+ ".gnus"
+ "packages.brew"
+ "init.el"
+ "csv-mode.el"
+ "musics.csv"
+ "music.cvs"
+ "musics"
+ "darwin.el"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/dannluciano/.emacs.d/dannluciano/" (20289 34462) "xwl-emms.el" "dl-twitter.el" "dl-ruby.el" "dl-r.el" "dl-others.el" "dl-latex.el" "dl-key-binddings.el" "dl-go.el" "dl-git.el" "dl-flyspell.el" "dl-eshell.el" "dl-erc.el" "dl-emms.el" "dl-editor.el" "dl-debugger.el" "dl-c.el" "dl-bindings.el" "dl-aspell.el" ".emacs.desktop" "../" "./")
+
+ ("/Users/dannluciano/.emacs.d/" (20293 34547) "vendor/" "var/" "url/" "tramp" "places" "init.el" "gnu/" "eshell/" "elpa/" "darwin.el" "dannluciano.el" "dannluciano/" "backups/" "auto-save-list/" ".smex-items" ".gitmodules" ".gitignore" ".git/" ".ercrc" ".emms-history" ".emacs.desktop" ".DS_Store" "../" "./")
+
+ ("/Users/dannluciano/" (20294 7649) "xubuntu-10.04.2-desktop-amd64.iso" "wget-log" "temp/" "Sources/" "Sites/" "Public/" "Programs/" "precise-desktop-amd64.iso" "Pictures/" "News/" "Music/" "Movies/" "main.c" "Mail/" "Library/" "Dropbox/" "Downloads/" "Documents/" "Desktop/" "Applications/" ".zshrc" ".zsh_history" ".zsh-update" ".zcompdump" ".Xauthority" ".twittering-mode.gpg" ".Trash/" ".TemporaryItems/" ".subversion/" ".ssh/" ".srecode/" ".sh_history" ".semanticdb/" ".rvmrc" ".rvm/" ".rnd" ".Rhistory" ".rediscli_history" ".recentf" ".RData" ".rbx/" ".rake_completion.rb" ".oh-my-zsh/" ".npm/" ".newsrc-dribble" ".mkvtoolnix/" ".local/" ".irbrc" ".irb_history" ".irb-history" ".ido.last" ".hgignore_global" ".heroku/" ".gpg-agent-info" ".gnus" ".gnupg/" ".gitignore_global" ".gitignore" ".gitconfig" ".gitattributes" ".git_completion.sh" ".gemrc" ".gem_completion.sh" ".gem/" ".gdb_history" ".fontconfig/" ".emacs.desktop.lock" ".emacs.desktop" ".emacs.d/" ".emacs-places" ".dvdcss/" ".DS_Store" ".dropbox/" ".dbus-keyrings/" ".cups/" ".config/" ".CFUserTextEncoding" ".cache/" ".bashrc" ".bash_profile" ".bash_history" ".bash_completion.sh" ".authinfo.gpg" "../" "./")
+
+ ("/Users/dannluciano/.emacs.d/elpa/csv-mode-1.50/" (20286 63129) "csv-mode.el" "csv-mode-pkg.el" "csv-mode-autoloads.el" "../" "./")
+
+ ("/Users/dannluciano/.emacs.d/elpa/" (20286 35342) "zenburn-theme-1.1/" "yasnippet-bundle-0.6.1/" "yasnippet-0.6.1/" "yas-jit-0.8.3/" "yaml-mode-0.0.7/" "windsize-0.1/" "wget-1.94/" "w3-4.0.46/" "textmate-3/" "sudoku-0.3/" "starter-kit-ruby-2.0.3/" "starter-kit-lisp-2.0.3/" "starter-kit-eshell-2.0.2/" "starter-kit-2.0.3/" "ssh-config-mode-1.13/" "sr-speedbar-0.1.8/" "solarized-theme-0.2/" "smex-1.1.2/" "rvm-1.2/" "ruby-mode-1.1/" "ruby-compilation-0.8/" "rspec-mode-0.2/" "rinari-2.3/" "regex-tool-1.2/" "rainbow-mode-0.2/" "r-autoyas-0.25/" "peepopen-0.1.0/" "pcache-0.2.2/" "paredit-22/" "org-magit-0.1.2/" "org-20120113/" "oauth2-0.2/" "nginx-mode-1.1/" "mustache-mode-1.1/" "multi-term-0.8.8/" "mode-compile-2.29/" "member-function-0.3.1/" "marmalade-0.0.4/" "markdown-mode-1.8.1/" "magithub-0.2/" "magithub-0.1/" "magit-gh-pulls-0.3/" "magit-1.1.1/" "mac-key-mode-2010.1.3/" "lua-mode-20110428/" "log4j-mode-1.3/" "jump-2.0/" "json-1.2/" "js2-mode-20090814/" "javascript-2.2.1/" "jabber-0.8.90/" "inflections-1.0/" "inf-ruby-2.2.3/" "ido-ubiquitous-0.9/" "idle-highlight-mode-1.1.2/" "htmlize-1.39/" "gtk-look-19/" "gtags-3.2/" "gnuplot-0.6.0/" "gnugo-2.2.12/" "git-commit-0.1/" "gist-0.5/" "gimme-2.1/" "gh-0.5.0/" "gccsense-0.2/" "furl-0.0.2/" "flymake-shell-0.5/" "flymake-ruby-0.4/" "flymake-0.4.6/" "findr-0.7/" "find-file-in-project-3.0/" "fill-column-indicator-0.40/" "feature-mode-0.1/" "erlang-2.4.1/" "erc-nick-notify-0.2.1/" "emms-3.0/" "elixir-mode-1.0.0/" "elisp-slime-nav-0.2/" "eieio-1.4/" "diff-git-0.1.1/" "ctags-update-0.1.2/" "ctags-1.1.1/" "csv-mode-1.50/" "crontab-mode-1.2/" "cppcheck-1.0/" "color-theme-6.6.1/" "cmake-mode-20110824/" "clojure-mode-1.11.5/" "chess-1.96/" "c-eldoc-0.6/" "bubbles-0.5/" "autopair-0.3/" "auctex-11.86/" "archives/" "apache-mode-2.0/" "android-mode-0.1/" ".DS_Store" "../" "./")
+
+ ("/Users/dannluciano/.emacs.d/gnu/" (20286 47656) "linux.el" "../" "./")
+
+ ("/Users/dannluciano/.emacs.d/vendor/" (20286 34968) "twittering-mode.el" "sourcepair.el" "rvm.el" "peepopen.el" "ess-5.14/" "erc-nick-notify.el" "../" "./")
+
+ ("/Users/dannluciano/Sources/cpp/examples/" (20284 61049) "typeof.c" "time.c" "threads.c" "test_float.c" "string_concat_sintax.c" "sqlite3-test/" "size_types.c" "simple.c" "serialize.c" "rbtree.h" "rbtree.c" "pthreads.c" "print_env.c" "print.c" "options.h" "null.c" "neuron artificial/" "ncurses/" "mod2.c" "mod1.c" "memory.c" "map.c" "makefile" "main.s" "main.dSYM/" "main.c" "main" "length_size.c" "io.c" "hash.h" "hash.c" "getopt_long.c" "getopt.c" "getcgi.c" "gc/" "for.c" "fibonacci/" "dynamic_array.c" "cplusplus.cpp" "ConversorBinario.c" "cmake/" "block.c" "autotools/" "assert.c" "args.c" "allegro/" "a.out" ".git/" "../" "./")
+
+ ("/Users/dannluciano/Sources/cpp/" (20270 13619) "old/" "mini_bench/" "makefile 2" "makefile" "hv-2.0rc1/" "hello-2.6/" "examples/" "dlib/" "arboretum/" "ann/" ".metadata/" "../" "./")
+
+ ("/Users/dannluciano/Sources/" (20281 1056) "web/" "tex/" "solarized/" "ruby/" "r/" "postgraduate/" "packages.brew" "objectivej/" "objectivec/" "nginx.conf" "mylanguage/" "mydotfiles/" "macbook" "llvm_default" "lisp/" "java/" "iterm/" "i3r/" "humans.txt" "gitignore/" "gcc_default" "erlang/" "Eclipse/" "dropbox" "cpp/" "clojure/" "cdtoiso.app/" "C Basico.mindnode" "BasicObject.mindnode/" "asweb/" ".DS_Store" "../" "./")
+
+ ("/Users/dannluciano/.oh-my-zsh/plugins/" (20274 47077) "yum/" "wakeonlan/" "vundle/" "vi-mode/" "vagrant/" "thor/" "textmate/" "terminitor/" "terminalapp/" "taskwarrior/" "symfony2/" "svn/" "ssh-agent/" "sprunge/" "rvm/" "ruby/" "redis-cli/" "rbenv/" "rake/" "rails3/" "rails/" "python/" "powder/" "pow/" "pip/" "phing/" "perl/" "osx/" "nyan/" "npm/" "node/" "mysql-macports/" "mercurial/" "macports/" "lol/" "lighthouse/" "lein/" "knife/" "kate/" "jake-node/" "history-substring-search/" "heroku/" "grails/" "gradle/" "gpg-agent/" "gnu-utils/" "github/" "git-flow/" "git/" "gem/" "gas/" "extract/" "django/" "dirpersist/" "debian/" "cpanm/" "compleat/" "command-not-found/" "cloudapp/" "cap/" "cake/" "bundler/" "brew/" "battery/" "autojump/" "archlinux/" "apache2-macports/" "ant/" "../" "./")
+
+ ("/Users/dannluciano/.oh-my-zsh/" (20274 47078) "tools/" "themes/" "templates/" "README.textile" "plugins/" "oh-my-zsh.sh" "log/" "lib/" "custom/" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/dannluciano/temp/mustache-sinatra-example/" (20278 59306) "views/" "templates/" "README.md" "Gemfile.lock" "Gemfile" "config.ru" "app.rb" ".git/" "../" "./")
+
+ ("/Users/dannluciano/temp/" (20278 59302) "mustache-sinatra-example/" "btestgen-read-only/" "../" "./")
+
+ ("/Users/dannluciano/Downloads/" (20275 61454) "xcode4.dmg" "There.Be.Dragons.2011.BluRay.720p.DTS.x264-ZMG.mkv" "The.Hangover.Part.II.2011.720p.BluRay.x264-Felony/" "The Smurfs 2011 720p BluRay DTS x264 Xtrm.mkv" "The Lion King - Blu-Ray - 720p - x264 - DTS - [DDR]/" "temp/" "Spartacus.S02E02.720p.HDTV.X264-DIMENSION.srt" "Spartacus.S02E02.720p.HDTV.X264-DIMENSION.mkv" "Source.Code.2011.R3.1080P.MKV.DD2.0.NL.Subs/" "Songbird_1.10.2-2199_macosx-i686.dmg" "Shrek 1,2,3,4 BDRip 1080p Eng Fra Hun Ita Spa multisub [mkvonly]/" "sf416.PremiumSoft.Navicat.PACK.v9.1.6.Incl.Keygen.MACOSX-Lz0/" "Server_GM.app.zip" "Rock in Rio 2011 [25-09-2011] 720p HDTV x264-nsiervi/" "Rise.of.the.Planet.of.the.Apes.2011.BluRay.720p.DTS.2Audio.x264-CHD/" "Rango.2011.720p.Bluray.x264-VeDeTT/" "Pirates Of The Caribbean On Stranger Tides/" "piratebay_magnet_scrape.txt" "Pilha Transferências.pdf" "National.Geographic.The.Egyptian.Job.PDTV.XviD.MP3.MVGroup.org.avi" "Mr.Popper's.Penguins.2011.BluRay.720p.x264.DTS-HDChina/" "Microsoft Office 2011 14.0.0 Final for Mac (Volume Licensed)/" "Mac OS X Install DVD 10.6.7.dmg" "LibO_3.3.2_MacOS_x86_langpack_en-US.dmg" "LibO_3.3.2_MacOS_x86_install_en-US.dmg" "Jurassic.Park.Ultimate.Trilogy.1993-2001.BluRay.1080p.DTS.2Audio.x264-CHD/" "iWork '09 Install DVD.cdr" "ItemCustomizerv2.3.zip" "ItemCustomizerv2.3/" "Install Mac OS X Lion/" "iLoL_Open_Beta.dmg" "gruml.dmg" "GCC-10.7-v2.pkg" "Game Of Thrones/" "FreeRAMBooster102.dmg" "Fast Five/" "complete.gz" "complete" "Bruna Surfistinha  - DVDRip XviD-.avi" "As Cariocas/" "Apollo 18/" "Alcatraz.S01E05.720p.HDTV.X264-DIMENSION.srt" "Alcatraz.S01E05.720p.HDTV.X264-DIMENSION.mkv" "Aladin/" "A.Mulher.Invisivel.[NACIONAL].DVDRip.XviD-GuilhermeMaia.avi" ".localized" ".DS_Store" "../" "./")
+
+ ("/Users/dannluciano/sources/flowshop/" (20275 56954) "verify" "Taillard_DueDates.7z" "src/" "refsets/" "README" "MOPFSP_Results.7z" "makefile" "instances/" "flowshop" "experiments.sh" "check/" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/dannluciano/sources/flowshop/src/" (20157 48096) "version.hpp" "tools.hpp" "tools.cpp" "TODO" "solution.hpp" "solution.cpp" "problem.hpp" "problem.cpp" "multi_objective/" "makefile" "main.cpp" "input_parser.hpp" "input_parser.cpp" "grasp/" "../" "./")
+
+ ("/Users/dannluciano/sources/" (20161 59722) "mydotfiles/" "gcc_default" "flowshop/" "emacs.d/" ".DS_Store" "../" "./")
+
+ ("/Users/dannluciano/.emacs.d/elpa/sr-speedbar-0.1.8/" (20274 51468) "sr-speedbar.el" "sr-speedbar-pkg.el" "sr-speedbar-autoloads.el" "../" "./")
+
+ ("/Users/dannluciano/.emacs.d/elpa/archives/marmalade/" (20156 44204) "archive-contents" "../" "./")
+
+ ("/Users/dannluciano/.emacs.d/elpa/archives/gnu/" (20156 44198) "archive-contents" "../" "./")
+
+ ("/Users/dannluciano/.emacs.d/elpa/archives/" (20156 44204) "marmalade/" "gnu/" "../" "./")
+
+ ("/Users/dannluciano/.emacs.d/elpa/starter-kit-2.0.3/" (20157 55140) "starter-kit.elc" "starter-kit.el" "starter-kit-pkg.elc" "starter-kit-pkg.el" "starter-kit-misc.elc" "starter-kit-misc.el" "starter-kit-defuns.elc" "starter-kit-defuns.el" "starter-kit-autoloads.el~" "starter-kit-autoloads.el" ".#starter-kit-defuns.el" "#starter-kit-defuns.el#" "../" "./")
+
+ ("/Users/dannluciano/sources/flowshop/.git/" (20156 43573) "refs/" "objects/" "logs/" "info/" "index" "hooks/" "HEAD" "FETCH_HEAD" "description" "config" "COMMIT_EDITMSG" "branches/" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
