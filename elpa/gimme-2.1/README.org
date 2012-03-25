@@ -1,5 +1,0 @@
-* So you think your music player rocks?
-
-  Oh yeah? Does it have:
-  - Lyrics fetcher
-  - Etc. TBD.

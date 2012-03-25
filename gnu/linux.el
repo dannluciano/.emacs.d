@@ -1,5 +1,5 @@
 ;; GNU/Linux
-(set-default-font "Monospace-14")
+;; (set-default-font "Monospace-14")
 
 
 ;; Textmate
@@ -28,6 +28,6 @@
 
 ;; ERC Nick Notify
 (autoload 'erc-nick-notify-mode "erc-nick-notify"
-  "Minor mode that calls `erc-nick-notify-cmd' when his nick gets
-mentioned in an erc channel" t)
+  "Minor mode that calls 'erc-nick-notify-cmd'
+when his nick gets mentioned in an erc channel" t)
 (eval-after-load 'erc '(erc-nick-notify-mode t))

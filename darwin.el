@@ -3,6 +3,7 @@
 
 
 ;; Peep Open
+(require 'textmate)
 (require 'peepopen)
 (define-key *textmate-mode-map* [(super t)] 'peepopen-goto-file-gui)
 
@@ -12,7 +13,6 @@
 
 ;; Mac friendley keys maps
 (global-set-key (kbd "<s-return>") 'ns-toggle-fullscreen)
-
 ;; (run-with-idle-timer 0.1 nil 'ns-toggle-fullscreen)
 
 
@@ -24,12 +24,7 @@
  `growlnotify-command` as the program."
   (flet ((encfn (s) (encode-coding-string s (keyboard-coding-system))) )
     (start-process "growlnotify" nil growlnotify-command (encfn title) "-a" "Emacs" "-n" "Emacs" "-m" (encfn message))) t)
-;; (let* ((process (start-process "growlnotify" nil growlnotify-command (encfn title) "-a" "Emacs" "-n" "Emacs" "-m" (encfn message))))
-;; (process-send-string process (encfn message))
-;; (process-send-string process "\n")
-;; (process-send-eof process)
-;; ))
-;; t)
+
 
 (defun my-erc-hook (match-type nick message)
   "Shows a growl notification, when user's nick was mentioned. If the buffer is currently not visible, makes it sticky."

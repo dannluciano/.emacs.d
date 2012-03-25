@@ -2,9 +2,9 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Thu Feb 16 17:08:57 2012
+;; Created Sat Mar 24 21:20:32 2012
 ;; Desktop file format version 206
-;; Emacs version 24.0.93.1
+;; Emacs version 24.0.94.1
 
 ;; Global section:
 (setq desktop-missing-file-warning nil)
@@ -13,17 +13,6 @@
 (setq search-ring nil)
 (setq regexp-search-ring nil)
 (setq register-alist nil)
-(setq file-name-history '("~/.emacs.d/" "/Users/dannluciano/.emacs.d/init.el"))
+(setq file-name-history '("/home/dannluciano/.emacs.d/gnu/linux.el" "/home/dannluciano/.zshrc" "/Users/dannluciano/.emacs.d/init.el" "/Users/dannluciano/.emacs.d/dannluciano/dl-key-binddings.el" "/Users/dannluciano/.emacs.d/darwin.el" "~/.emacs.d/" "/Users/dannluciano/.emacs.d/init.el"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
-(desktop-create-buffer 206
-  "/home/dannluciano/.emacs.d/init.el"
-  "init.el"
-  'emacs-lisp-mode
-  '(auto-fill-mode yas/minor-mode eldoc-mode paredit-mode elisp-slime-nav-mode)
-  382
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix) (column-number-mode . t)))
-

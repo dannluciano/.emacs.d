@@ -43,13 +43,15 @@
 (setq dotfiles-dir (file-name-directory
                     (or (buffer-file-name) load-file-name)))
 (add-to-list 'load-path dotfiles-dir)
-(add-to-list 'load-path (concat dotfiles-dir "/vendor"))
-
+(add-to-list 'load-path (concat dotfiles-dir "vendor"))
+(add-to-list 'load-path (concat dotfiles-dir "dannluciano"))
 
 ;; ELPA
 (require 'package)
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (add-to-list 'package-archives '("tromey" . "http://tromey.com/elpa/") t)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
 (package-initialize)
 
 (when (not package-archive-contents)
@@ -63,19 +65,19 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
-
-;; Menu Mode and Frames Setup
-(if (fboundp 'menu-bar-mode) (menu-bar-mode t))
-(if window-system
-    (setup-frames)
-  (if (fboundp 'menu-bar-mode) (menu-bar-mode 0)))
-
+(load "dl-default.el")
 
 ;; You can keep system- or user-specific customizations here
-(setq system-type-specific-config
-      (concat dotfiles-dir (prin1-to-string system-type) ".el"))
+(setq system-type-specific-config (concat dotfiles-dir (prin1-to-string system-type) ".el"))
+
 (if (file-exists-p system-type-specific-config)
     (load system-type-specific-config))
+
+
+;; Menu Mode
+(if window-system
+    (if (fboundp 'menu-bar-mode) (menu-bar-mode t))
+  (if (fboundp 'menu-bar-mode) (menu-bar-mode 0)))
 
 
 ;; Speedbar
@@ -91,18 +93,19 @@
 (setq pop-up-windows nil)
 (setq column-number-mode t)
 
-;; (if (fboundp 'display-battery-mode) (display-battery-mode t))
 
 ;; Color Theme
-(if window-system
+(if (window-system)
     (load-theme 'solarized-dark)
   (load-theme 'wombat))
 
+(if (window-system)
+    (run-with-idle-timer 0.1 nil 'setup-frames))
 
 (whitespace-mode t)
 ;; (eshell)
 ;; (sr-speedbar-toggle)
-(other-window 1)
+;; (other-window 1)
 (server-start)
 
 ;; Benchmarking
