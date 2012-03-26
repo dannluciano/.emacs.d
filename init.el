@@ -9,7 +9,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(current-language-environment "UTF-8")
- '(custom-safe-themes (quote ("222166d219e827e44d4f38442fe39888e2140d3383173f789b284808efa518c4" "adeab0646e21115b96a5e92dfe5169056d9a91130d144243856b04aa23ec463b" "537ca47d1757056f1dc230479a800976fd507062450885af518a07a6d09b5a8b" "baed08a10ff9393ce578c3ea3e8fd4f8c86e595463a882c55f3bd617df7e5a45" "374e79a81930979e673b8e0869e135fb2450b18c6474ca145f104e0c6f003267" "532391a2cfb814f71f90d104f49841cdf6f97a2bc0bd37ebd0d521c2e906416b" "54d1bcf3fcf758af4812f98eb53b5d767f897442753e1aa468cfeb221f8734f9" "69349beba557a65bb06f89b28b8fd2890c742f07" "1f392dc4316da3e648c6dc0f4aad1a87d4be556c" "1440d751f5ef51f9245f8910113daee99848e2c0" "e254937cba0f82c2d9eb3189a60748df9e486522" "485737acc3bedc0318a567f1c0f5e7ed2dfde3fb" "d14db41612953d22506af16ef7a23c4d112150e5" default)))
+ '(custom-safe-themes (quote ("b7553781f4a831d5af6545f7a5967eb002c8daeee688c5cbf33bf27936ec18b3" "baed08a10ff9393ce578c3ea3e8fd4f8c86e595463a882c55f3bd617df7e5a45" "211bb9b24001d066a646809727efb9c9a2665c270c753aa125bace5e899cb523" "54d1bcf3fcf758af4812f98eb53b5d767f897442753e1aa468cfeb221f8734f9" default)))
  '(desktop-save-mode t nil (desktop))
  '(fringe-mode (quote (10 . 10)) nil (fringe))
  '(global-font-lock-mode t nil (font-lock))
@@ -58,7 +58,7 @@
   (package-refresh-contents))
 
 ;; Add in your own as you wish:
-(defvar my-packages '(starter-kit)
+(defvar my-packages '(starter-kit textmate emms sr-speedbar)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
@@ -81,7 +81,7 @@
 
 
 ;; Speedbar
-(load-file (concat dotfiles-dir "/elpa/sr-speedbar-0.1.8/sr-speedbar.elc"))
+(load-file (concat dotfiles-dir "/elpa/sr-speedbar-0.1.8/sr-speedbar.el"))
 (setq speedbar-use-images nil
       sr-speedbar-right-side nil)
 (global-set-key [(control tab)] 'sr-speedbar-toggle)

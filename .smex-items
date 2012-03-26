@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- cua-mode
+ erc
  load-theme
- eval-region
  package-list-packages-no-fetch
- list-packages
+ byte-compile-file
+ byte-recompile-directory
+ speedbar
  package-install
- eshell
 )
 
 ;; ----- smex-data -----
@@ -17,11 +17,11 @@
  (customize-themes . 1)
  (maximize-window . 3)
  (magit-status . 2)
- (speedbar . 39)
+ (speedbar . 40)
  (list-packages . 20)
  (indent-new-comment-line . 2)
  (comment-box . 1)
- (package-install . 45)
+ (package-install . 49)
  (make-directory . 1)
  (frame-resize . 6)
  (fill-region . 10)
@@ -92,7 +92,7 @@
  (flyspell-buffer . 1)
  (speedbar-frame-mode . 3)
  (speedbar-frame-resize . 1)
- (load-theme . 88)
+ (load-theme . 98)
  (emms-play-directory . 7)
  (setup-frames . 6)
  (other-frame . 4)
@@ -105,7 +105,7 @@
  (ecb-minor-menu . 1)
  (emacs-version . 1)
  (compile . 5)
- (sr-speedbar-open . 5)
+ (sr-speedbar-open . 6)
  (select-frame-by-name . 3)
  (url-view-url . 5)
  (browse-url . 2)
@@ -122,14 +122,14 @@
  (pascal-mode . 1)
  (ruby-mode . 6)
  (customize-browse . 1)
- (erc . 28)
+ (erc . 29)
  (column-number-mode . 3)
  (fill-region-as-paragraph . 1)
  (fill-individual-paragraphs . 2)
  (LaTeX-fill-paragraph . 2)
  (speedbar-add-localized-speedbar-support . 1)
  (package-initialize . 2)
- (byte-compile-file . 10)
+ (byte-compile-file . 12)
  (gomoku . 2)
  (beginning-of-buffer-other-window . 1)
  (balance-windows . 11)
@@ -143,7 +143,7 @@
  (rvm-use-default . 2)
  (compare-windows . 3)
  (twitter-get-friends-timeline . 4)
- (package-list-packages-no-fetch . 5)
+ (package-list-packages-no-fetch . 6)
  (twittering-mode . 3)
  (twit . 10)
  (flymake-ruby-load . 3)
@@ -203,4 +203,5 @@
  (fundamental-mode . 1)
  (whitespace-cleanup . 1)
  (comment-or-uncomment-region . 4)
+ (byte-recompile-directory . 1)
 )
