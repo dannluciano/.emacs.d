@@ -17,3 +17,6 @@
 ;; Font size
 (define-key global-map (kbd "C-+") 'text-scale-increase)
 (define-key global-map (kbd "C--") 'text-scale-decrease)
+
+
+(global-set-key [(meta o)] 'other-window)
