@@ -6,3 +6,18 @@ purge
 purge
 ln -s .emacs.d/gnus.el .gnus
 ls
+acesslog
+ruby -v
+gcc -v
+gcc -v
+echo $PATH
+gcc -v
+echo $PATH
+env
+echo $path
+echo $PATH
+echo $PATH
+echo $PATH
+ruby -v
+gcc -v
+mysql

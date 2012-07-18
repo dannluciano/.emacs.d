@@ -9,3 +9,6 @@
 (whitespace-mode)
 
 (add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
+
+(require 'yasnippet-bundle)
+(yas/load-directory (concat dotfiles-dir "/snippets"))

@@ -15,6 +15,7 @@
   (turn-on-auto-fill))
 (add-hook 'c-mode-hook 'my-c-common-hook)
 (add-hook 'c++-mode-hook 'my-c-common-hook)
+
 ;; C Mode
 (defun my-c-hook()
   (c-set-style "gnu"))
@@ -30,7 +31,10 @@
 
 ;; SourcePair
 (require 'sourcepair)
+(setq sourcepair-source-path '("." "../src"))
+(setq sourcepair-header-path '("." "../include"))
 (global-set-key (kbd "s-5") 'sourcepair-load)
+
 
 
 ;; Semantic Mode

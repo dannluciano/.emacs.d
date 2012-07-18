@@ -7,3 +7,6 @@
 [submodule "twittering-mode"]
 	path = vendor/twittering-mode
 	url = https://github.com/hayamiz/twittering-mode.git
+[submodule "vendor/rhtml"]
+	path = vendor/rhtml
+	url = https://github.com/eschulte/rhtml.git

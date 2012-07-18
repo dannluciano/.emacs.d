@@ -1,6 +1,5 @@
-;; Darwin
-(set-frame-font "Monaco-12")
-
+;; Darwin.el
+;; (set-frame-font "Menlo")
 
 (defadvice yes-or-no-p (around prevent-dialog activate)
   "Prevent yes-or-no-p from activating a dialog"
@@ -19,7 +18,7 @@
 (define-key *textmate-mode-map* [(super t)] 'peepopen-goto-file-gui)
 
 (setq ns-pop-up-frames nil
-  emms-source-file-default-directory "~/Music/iTunes/iTunes Media/Music/")
+  emms-source-file-default-directory "~/Music/all/")
 
 
 ;; Mac friendley keys maps
@@ -46,3 +45,5 @@
      )))
 
 (add-hook 'erc-text-matched-hook 'my-erc-hook)
+
+(provide 'dl-darwin)
