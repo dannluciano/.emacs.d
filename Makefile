@@ -1,8 +1,23 @@
-TARGET=dlcorp.el
+EMACS=emacs
+EFLAGS= -L . 					\
+	-L ./vendor/ 				\
+	-L ./elpa/yasnippet-bundle-0.6.1/ 	\
+	-L ./elpa/emms-20110425/ 		\
+	-L ./elpa/magit-20120616/ 		\
+	-L ./elpa/textmate-20110816/
 
-all:
-	cat src/*.el > dlcorp.el
-	echo "(provide 'dlcorp)" >> dlcorp.el
+SRC=dl-darwin.el dl-gnu-linux.el
+
+all: dlcorp elc
+
+
+elc:
+	$(EMACS) $(EFLAGS) -q -batch  -f batch-byte-compile $(SRC)
+
+dlcorp:
+	rm -f $@.el
+	cat src/*.el > $@.el
+	echo "(provide 'dlcorp)" >> $@.el
 
 clean:
-	rm dlcorp.el
+	rm -f dlcorp.el *.elc

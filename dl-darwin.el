@@ -1,5 +1,5 @@
 ;; Darwin.el
-;; (set-frame-font "Menlo")
+;; (set-frame-font "Monaco-16")
 
 (defadvice yes-or-no-p (around prevent-dialog activate)
   "Prevent yes-or-no-p from activating a dialog"
