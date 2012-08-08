@@ -3,3 +3,4 @@ autosaves/
 *.elc
 elpa/
 .emacs.desktop
+places
